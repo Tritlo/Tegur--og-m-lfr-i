@@ -1,0 +1,132 @@
+\documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+
+\input{header.tex}
+
+\title{Tegur- og Málfræði}
+\subtitle{Fyrirlestrarnótur}
+\author{Matthías Páll Gissurarson}
+\date{Vor 2015}
+
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Mengi: Ritháttur og upprifjun}
+Gefum okkur að til grundvallar liggi ``hæfilega''  stórt almengi.
+
+\begin{itemize}
+\item Fjölskylda af hlutmengjum í mengi M er vörpun \(a: \Lambda \to \mathcal{P}(M) \). Skrifum í stað $a(\alpha)$ og táknum $a$ með $(A_{\alpha})_{\alpha \in \Lambda}$. $\Lambda$ kallast \emph{stikamengi} fjölskyldunnar.
+\item \[ \bigcap_{\alpha \in \Lambda} := \set{x \in M | x \in A_{\alpha} \text{ f. \emph{öll} $\alpha$ úr $\Lambda$}}\]
+\item \[ \bigcup_{\alpha \in \Lambda} := \set{x \in M | x \in A_{\alpha} \text{ f. \emph{eitthvert} $\alpha$ úr $\Lambda$}}\]
+
+\item Fyrir $A \subseteq M$ setjum við \[A^C = M \setminus A := \set{ x \in M | x \not\in A}\] og köllum \emph{fyllimengi} A (í M).
+\item Fyrir $ A, B \subseteq M$ setjum við \[B \setminus A := \set{ x \in B | x \not\in A} = B \cap A^C\]
+\item Fyrir $A,B \subseteq M$ kallast \[ A \Delta B := ( A \setminus B) \cup (B \setminus A) \] (s.s. bara þau stök sem eru í öðru hvoru, en ekki báðum) \emph{samhverfur mismunur} A og B.
+
+\item \emph{Reglur de Morgan} \[ (\bigcup_{\alpha \in \Lambda} A_{\alpha})^C = \bigcap_{\alpha \in \Lambda} A_{\alpha}^C\]
+
+\[ (\bigcap_{\alpha \in \Lambda} A_{\alpha})^C = \bigcup_{\alpha \in \Lambda} A_{\alpha}^C\]
+\item Fyrir $ A \subseteq M$ skgr. við kennifall $A$:
+\[ 1_A: M \to \R, 1_A(x) = \bcondef 1 & \Ef x \in A \\ 0 & \Ef x \not\in A \econdef \]A
+
+\item Fyrir $A,B \subseteq M$ gildir $1_{A \cap B} = 1_A \cdot 1_B$, $1_{A \cup B} = 1_A + 1_B - 1_{A \cap B}$ og $1_{A^C} = 1 - 1_A$.
+\end{itemize}
+
+\section{Firðrúm} Hlutmengi í firðrúmi er opið \emph{þþaa} það sé sammengi af opnum kúlum. Sér í lagi er hlutmengi í $\R$ opið \emph{þþaa} það sé sammengi af opnum bilum.
+
+\chapter{}
+\section{Riemann Darboux- heildið} er mjög þunglamalegt og hegðar sér illa m.t.t markgilda; runa af Riemann heildanlegum föllum getur hæglega stefnt (í sérhverjum punkti) á fall sem er ekki Riemann heildanlegt (stundum kallað einfaldlega samleitið).
+
+\begin{daemi}
+\[f: [0,1] \to R, f(x) = \bcondef 0 & \Ef x \in \Q \\ 1 & \Ef x \in \Q \econdef  | f = 1_{Q \cap [0,1]}. \]
+
+$\Q$ er teljanlegt, svo að til er gagntækt fall $q: \N \to \Q \cap [0,1]$, þ.e.a.s. til er runa $(q_n)_{n \in \N}$ þar sem sérhver ræð tala úr $[0,1]$ kemur nkvl. einu sinni fyrir. Setjum $A_n = \set{q_1, \dotsc, q_n}$ og $f_n = 1_{A_n}$. Þá er $f_n \nearrow f$ og ljóst er að $f_n$-in eru Riemann heildanleg, en $f$ ekki.
+
+Hugmyndin er sú að stækka flokk heildanlegra falla þ.a. ekki $f$ gildi.
+
+Allar eðlilegar reiknireglur varðandi heildi gilda áfram.
+
+Flokkurinn er mun þjálli m.t.t. ýmissa aðgerða, sérstaklega markgildistöku.
+\end{daemi}
+
+\section{Núllmengi}
+\subsection{Dæmi}
+\begin{enumerate}[i)]
+\item Öll teljanleg hlutmengi í $\R$ eru Núllmengi: Ef $(x_n)_{n \geq 1}$ er upptalning á stökum teljanlegs mengis, þá er $A = \cup_{n \geq 1} [x_n, x_n]$ og $\sum_{n = 1}^{\infty} l([x_n,x_n]) = \sum_{n=1}^{\infty} 0 = 0$
+\item $l(\emptyset) = l(]0,0[) = 0$, svo að $\emptyset$ er núllmengi.
+\end{enumerate}
+
+\section*{Innskot}
+
+\begin{setn}
+Látum $\sum_{n=1}^{\infty}$ vera alsamleitna tvinntalnaröð og $\sigma: \overbrace{\N}^{n \geq 1} \to \N$ vera gagntæka vörpun (umröðun). Þá er röðin $\sumninfty{1} a_{\sigma(n)}$ alsamleitin og $\sumninfty{1} a_{\sigma(n)} = \sumoinfty a_n$.
+\end{setn}
+\begin{proof}
+Fyrir $N > 0$ er til $M > 0$ þ.a. $\set{\sigma(1), \dotsc, \sigma(n)} \subseteq \set{1, \dotsc, M}$.
+\[\sum_{n=1}^{N}  \abs{a_{\sigma(n)}}
+\leq \sum_{n = 1}^M \abs{a_n}
+\ub{\leq \sumninfty{1} \abs{a_n}}{$< +\infty$}
+\]
+þar með er $\sumoinfty \abs{a_{\sigma(n)}}$ alsamleitin.
+Setjum nú fyrir öll $n \geq 1$ $S_n := \sum_{k=1}^n a_k$ og $T_n := \sum_{k=1}^n a_{\sigma(k)}$.
+Okkur nægir að sýna að f. sérhvert $\epsilon > 0$ sé til $n_0$ þ.a. $\abs{S_n - T_n} \leq \epsilon$ f. öll $n \geq n_0$.
+
+Gefum okkur $\eps > 0$ og veljum $N$ þ.a. $\sum_{j = N+1}^{\infty} \abs{a_j} \leq \epsilon$. Tökum svo $n_0$ þ.a. $ \set{1, \dotsc, n} \subseteq \set{\sigma(1), \dotsc, \sigma(n_0)}$. Þá styttast tölurnar $\abs{a_n, \dotsc, a_n}$ allar út í mismuninum $S_n - T_n$, og þar með $\abs{S_n - T_n} \leq \sum_{j = N+1}^{\infty} \abs{a_j}  \leq \epsilon$ ef $n \geq n_0$.
+\end{proof}
+
+\begin{setn}[Umröðunarsetning Riemanns]
+Ef $\sum a_n$, þar sem $a_n$ eru rauntölur er samleitin, en $\sum \abs{a_n} = \infty$, þ.e.
+samleitin en ekki alsamleitin, og $L \in [-\infty, +\infty]$, þá er til gagntæk vörpun
+$\sigma: \N \to \N$ sem hefur þann eiginleika að $\sumoinfty a_{\sigma(n)} = L$.
+\end{setn}
+\begin{proof} Sleppt.
+
+Lausleg útskýring:
+\[a_n^+ \bcondef a_n & \Ef a_n \geq 0 \\ 0 & \Ef a_n < 0 \econdef 
+a_n^- \bcondef \abs{a_n} & \Ef a_n \leq 0 \\ 0 & \Ef a_n > 0 \econdef
+\]
+Ef $a_n$ er alsamleitin, þá er $\sum a_n = \ub{\sum a_n^+}{saml} - \ub{\sum a_n^-}{saml}$,
+en ef $\sum a_n$ er samleitin en ekki alsamleitin, þá eru $\sum a_n^+$ og $\sum a_n^-$ báðar ósamleitnar.
+
+\end{proof}
+
+Látum nú $\Lambda$ vera eitthvað teljanlegt mengi og $(a_{\alpha})_{\alpha \in \Lambda}$ vera fjölskylda af tvinntölum. Við segjum að summan $\sum_{\alpha \in \Lambda}$ sé alsamleitin ef
+til er gagntæk vörpun $\sigma: \N \to \Lambda$ þ.a. $\sumoinfty \abs{a_{\sigma(n)}} < +\infty$ (þ.e.a.s. $\sumoinfty \abs{a_{\sigma(n)}}$ er alsamleitin). Táknum þá summuna með $\sumoinfty \abs{a_n}$. Skv. setn sem við vorum að sanna, þá er þessi eiginleiki óháður valinu á $\sigma$.
+
+\section*{Æfing}
+Látum $(a_{\alpha})_{\alpha \in \Lambda}$ eins og áður. Sýnið: Ef $a_{\alpha}$ er alsamleitin, þá gildir f. sérhvert $\epsilon > 0$ að til er endanlegt hlutmengi $I$ í $\Lambda$ sem uppfyllir
+\[ \abs{\sum_{\alpha \in \Lambda} a_{\alpha} - \sum_{\alpha \in J} } < \epsilon \]
+fyrir öll endanleg $J$ þ.a. $I \subseteq J \subseteq \Lambda $. 
+
+\begin{ath} Út frá umröðunarsetningu fæst að samleitin röð $\sumoinfty a_n$ sem breytist ekki við umraðanir er alsamleitin. 
+
+%{} skilgreinir lokun, þ.a. inní henni get ég deffað eins og ég vil.
+{ 
+    \def\aal{a_{\alpha}}
+    \def\aall{(\aal)_{\alpha \in \Lambda}}
+    \def\saal{\sum_{\alpha \in \Lambda} a_{\alpha}} 
+
+\newcommand{\sal}[1]{\sum_{\alpha \in #1} a_{\alpha } }
+
+Takið eftir að summa 
+$\saal$ er alsamleitin þþaa til sé $ K > 0$ sem uppfyllir
+
+$\sal{I} \abs{\aal} \leq K$ f. öll endanleg $I \subseteq \Lambda$.
+
+\def\mn{(m,n)}
+\def\amn{a_{m,n}}
+Lítum nú á tilfellið $(\amn)_{\mn \in \underbrace{\N \times \N}_{\N^2}}$.
+
+Ef $\sum_{\mn \in \N^2} \amn$ er alsamleitin, þá er til $k > 0$ þ.a.
+$\sum_{m=1}^M \sum_{n=1}^N | \amn| \leq k$ f. öll $M$ og $N$.
+Þá er $\sum_{n=1}^N \abs{\amn} \leq k$ f. öll m og öll $N$. og því
+$\sumoinfty \abs{\amn} \leq k$ og $\forall m$ og þar með $\sum_{n=1}^N \left(\sum_{m=1}^M \abs{\amn}\right) \leq k$ f. öll $M$. Af því leiðir að $\sum_{m=1}^{\infty} \left( \sumoinfty \abs{\amn} \right) \leq k$ og þar með er $\sum_{m=1}^{\infty} \left( \sumoinfty \abs{\amn} \right)$ alsamleitin.
+}
+
+
+\end{ath}
+\end{document}
