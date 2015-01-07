@@ -36,13 +36,15 @@ Gefum okkur að til grundvallar liggi ``hæfilega''  stórt almengi.
 \item Fyrir $A,B \subseteq M$ gildir $1_{A \cap B} = 1_A \cdot 1_B$, $1_{A \cup B} = 1_A + 1_B - 1_{A \cap B}$ og $1_{A^C} = 1 - 1_A$.
 \end{itemize}
 
-\section{Firðrúm} Hlutmengi í firðrúmi er opið \emph{þþaa} það sé sammengi af opnum kúlum. Sér í lagi er hlutmengi í $\R$ opið \emph{þþaa} það sé sammengi af opnum bilum.
+\section{Firðrúm}
+Hlutmengi í firðrúmi er opið \emph{þþaa} það sé sammengi af opnum kúlum. Sér í lagi er hlutmengi í $\R$ opið \emph{þþaa} það sé sammengi af opnum bilum.
 
 \chapter{}
-\section{Riemann Darboux- heildið} er mjög þunglamalegt og hegðar sér illa m.t.t markgilda; runa af Riemann heildanlegum föllum getur hæglega stefnt (í sérhverjum punkti) á fall sem er ekki Riemann heildanlegt (stundum kallað einfaldlega samleitið).
+\section{Riemann Darboux- heildið}
+er mjög þunglamalegt og hegðar sér illa m.t.t markgilda; runa af Riemann heildanlegum föllum getur hæglega stefnt (í sérhverjum punkti) á fall sem er ekki Riemann heildanlegt (stundum kallað einfaldlega samleitið).
 
 \begin{daemi}
-\[f: [0,1] \to R, f(x) = \bcondef 0 & \Ef x \in \Q \\ 1 & \Ef x \in \Q \econdef  | f = 1_{Q \cap [0,1]}. \]
+\[f: [0,1] \to R, f(x) = \bcondef 0 & \Ef x \not\in \Q \\ 1 & \Ef x \in \Q \econdef  | f = 1_{Q \cap [0,1]}. \]
 
 $\Q$ er teljanlegt, svo að til er gagntækt fall $q: \N \to \Q \cap [0,1]$, þ.e.a.s. til er runa $(q_n)_{n \in \N}$ þar sem sérhver ræð tala úr $[0,1]$ kemur nkvl. einu sinni fyrir. Setjum $A_n = \set{q_1, \dotsc, q_n}$ og $f_n = 1_{A_n}$. Þá er $f_n \nearrow f$ og ljóst er að $f_n$-in eru Riemann heildanleg, en $f$ ekki.
 
@@ -63,7 +65,7 @@ Flokkurinn er mun þjálli m.t.t. ýmissa aðgerða, sérstaklega markgildistök
 \section*{Innskot}
 
 \begin{setn}
-Látum $\sum_{n=1}^{\infty}$ vera alsamleitna tvinntalnaröð og $\sigma: \overbrace{\N}^{n \geq 1} \to \N$ vera gagntæka vörpun (umröðun). Þá er röðin $\sumninfty{1} a_{\sigma(n)}$ alsamleitin og $\sumninfty{1} a_{\sigma(n)} = \sumoinfty a_n$.
+Látum $\sum_{n=1}^{\infty}a_n$ vera alsamleitna tvinntalnaröð og $\sigma: \overbrace{\N}^{n \geq 1} \to \N$ vera gagntæka vörpun (umröðun). Þá er röðin $\sumninfty{1} a_{\sigma(n)}$ alsamleitin og $\sumninfty{1} a_{\sigma(n)} = \sumoinfty a_n$.
 \end{setn}
 \begin{proof}
 Fyrir $N > 0$ er til $M > 0$ þ.a. $\set{\sigma(1), \dotsc, \sigma(n)} \subseteq \set{1, \dotsc, M}$.
@@ -75,7 +77,7 @@ Fyrir $N > 0$ er til $M > 0$ þ.a. $\set{\sigma(1), \dotsc, \sigma(n)} \subseteq
 Setjum nú fyrir öll $n \geq 1$ $S_n := \sum_{k=1}^n a_k$ og $T_n := \sum_{k=1}^n a_{\sigma(k)}$.
 Okkur nægir að sýna að f. sérhvert $\epsilon > 0$ sé til $n_0$ þ.a. $\abs{S_n - T_n} \leq \epsilon$ f. öll $n \geq n_0$.
 
-Gefum okkur $\eps > 0$ og veljum $N$ þ.a. $\sum_{j = N+1}^{\infty} \abs{a_j} \leq \epsilon$. Tökum svo $n_0$ þ.a. $ \set{1, \dotsc, n} \subseteq \set{\sigma(1), \dotsc, \sigma(n_0)}$. Þá styttast tölurnar $\abs{a_n, \dotsc, a_n}$ allar út í mismuninum $S_n - T_n$, og þar með $\abs{S_n - T_n} \leq \sum_{j = N+1}^{\infty} \abs{a_j}  \leq \epsilon$ ef $n \geq n_0$.
+Gefum okkur $\epsilon > 0$ og veljum $N$ þ.a. $\sum_{j = N+1}^{\infty} \abs{a_j} \leq \epsilon$. Tökum svo $n_0$ þ.a. $ \set{1, \dotsc, n} \subseteq \set{\sigma(1), \dotsc, \sigma(n_0)}$. Þá styttast tölurnar $\abs{a_n, \dotsc, a_n}$ allar út í mismuninum $S_n - T_n$, og þar með $\abs{S_n - T_n} \leq \sum_{j = N+1}^{\infty} \abs{a_j}  \leq \epsilon$ ef $n \geq n_0$.
 \end{proof}
 
 \begin{setn}[Umröðunarsetning Riemanns]
