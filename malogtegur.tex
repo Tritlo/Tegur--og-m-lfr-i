@@ -129,6 +129,66 @@ $\sum_{m=1}^M \sum_{n=1}^N | \amn| \leq k$ f. öll $M$ og $N$.
 $\sumoinfty \abs{\amn} \leq k$ og $\forall m$ og þar með $\sum_{n=1}^N \left(\sum_{m=1}^M \abs{\amn}\right) \leq k$ f. öll $M$. Af því leiðir að $\sum_{m=1}^{\infty} \left( \sumoinfty \abs{\amn} \right) \leq k$ og þar með er $\sum_{m=1}^{\infty} \left( \sumoinfty \abs{\amn} \right)$ alsamleitin.
 }
 
+\end{ath}
+\chapter{?}
+
+\section*{Innskot}
+
+{
+
+\def\mn{(m,n)}
+\def\amn{a_{m,n}}
+\def\summn{\sum_{\mn \in \N^2}}
+
+... % Hér vantar fyrri hluta fyrsta tíma.
+Þá gildir um öll $M$ og $N$ að $\sum_{m=1}^{\infty} \sum_{n=1}^{\infty} \abs{\amn} \leq \summinfty (\sumoinfty \abs{\amn})$, svo að $\sum_{\mn \in \N^2} \amn$ er alsamleitin.
+
+Sýnum að þá sé $\summinfty ( \sumoinfty \amn ) = \summn \amn$.
+
+Nú: Gefum okkur $\epsilon > 0$. Veljum M svo stórt að $\summinfty ( \sumoinfty \amn ) < \eps{4}$.
+
+Veljum svo $N$ það stórt að
+
+... % vantar smá af einni töflu
+
+
+}
+
+\section{}
+
+\subsection{}
+\begin{proof}
+
+Gefum okkur $\epsilon > 0$. Fyrir hvert m veljum við runu $(I^n_k)_{k \geq 1}$ af bilum sem uppfyllir
+
+\[N_n \leq \bigcup_{k \geq 1} I_k^n \text{ og } \sumninfty{k} l(I^n_k) < \eps{2^n}\]
+
+Veljum gagntæka vörpun $\sigma: \N \to \N^2$ og skrifum $(I^n_k)_{(m,n) \in \N^2}$ sem runu
+$(J_j)_{j \in \N}$ með hjálp $\sigma$, þ.e.a.s $J_j = I^n_k$
+
+þþaa $\sigma (j) = (m,n)$.
+
+\begin{ath}
+$N \subseteq \R$ er núllmengi ef fyrir sérhvert $\epsilon > 0$ er til runa $(I_n)_{n}$ af bilum þ.a.
+$N \subseteq \bigcup I_n$ og $\sum_{n \geq 1} l(I_n) < \epsilon$.
 
 \end{ath}
+
+Ljóst er að $N = \bigcup_{n \geq 1} N_n \subseteq \bigcup_{(m,n) \in \N^2} I^n_k = \bigcup_{j \geq 1} J_j$
+og skv. innskotinu hér að framan fæst þá að
+$\sumninfty{j} l(J_j) = \sumoinfty ( \sumninfty{k} l(I_k^n)) < \sumninfty{n} \eps{2^n} = \epsilon$
+
+\end{proof}
+
+\begin{daemi}
+
+Öll teljanleg hlutmengi í $\R$ eru núll mengi, en Cantor-mengið er dæmi um óteljanlegt núllmengi (sjá bls. 19 í bók og ``mengi og firðrúm'').
+\end{daemi}
+
+\section{}
+\subsection{}
+\subsection{}
+\begin{proof}
+\end{proof}
+
 \end{document}
