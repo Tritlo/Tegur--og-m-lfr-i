@@ -167,7 +167,7 @@ Veljum svo $N$ það stórt að
 
 Gefum okkur $\epsilon > 0$. Fyrir hvert m veljum við runu $(I^n_k)_{k \geq 1}$ af bilum sem uppfyllir
 
-\[N_n \leq \bigcup_{k \geq 1} I_k^n \text{ og } \sumninfty{k} l(I^n_k) < \eps{2^n}\]
+\[N_n \subset \bigcup_{k \geq 1} I_k^n \text{ og } \sumninfty{k} l(I^n_k) < \eps{2^n}\]
 
 Veljum gagntæka vörpun $\sigma: \N \to \N^2$ og skrifum $(I^n_k)_{(m,n) \in \N^2}$ sem runu
 $(J_j)_{j \in \N}$ með hjálp $\sigma$, þ.e.a.s $J_j = I^n_k$
@@ -179,6 +179,7 @@ $N \subseteq \R$ er núllmengi ef fyrir sérhvert $\epsilon > 0$ er til runa $(I
 $N \subseteq \bigcup I_n$ og $\sum_{n \geq 1} l(I_n) < \epsilon$.
 
 \end{ath}
+\end{proof}
 \chapter{}
 
 \section*{Innskot}
@@ -206,7 +207,8 @@ Við gefum
 þá fæst: 
 \begin{gather*}
 \abs{\summinfty ( \sumoinfty \amn) - \sum_{(m,n) \in \N^2} \amn}  \leq \abs{\summinfty ( \sumoinfty \amn) - \sum_{m=1}^{M} \sum_{n=1}^N \amn} + \underbrace{\abs{\sum_{m=1}^M \sum_{n=1}^N \amn - \sum_{(m,n) \in \N^2} \amn}}_{< \eps{2}}\\
-< \abs{\summinfty ( \sumoinfty \amn)} + \abs{\sum_{m=1}^M ( \sum_{n = N+1}^{\infty} \amn)} + \eps{2} < \eps{4} + \sum^n \eps{2^{m+2}} + \eps{2} < \eps{4} + \eps{4} + \eps{2} = \epsilon
+< \abs{\summinfty ( \sumoinfty \amn)} + \abs{\sum_{m=1}^M ( \sum_{n = N+1}^{\infty} \amn)} + \eps{2}\\
+< \eps{4} + \sum^n \eps{2^{m+2}} + \eps{2} < \eps{4} + \eps{4} + \eps{2} = \epsilon
 \end{gather*}
 
 Hér líkur innskoti.
@@ -219,7 +221,7 @@ Hér líkur innskoti.
 
 Gefum okkur $\epsilon > 0$. Fyrir hvert m veljum við runu $(I^n_k)_{k \geq 1}$ af bilum sem uppfyllir
 
-\[N_n \leq \bigcup_{k \geq 1} I_k^n \text{ og } \sumninfty{k} l(I^n_k) < \eps{2^n}\]
+\[N_n \subset \bigcup_{k \geq 1} I_k^n \text{ og } \sumninfty{k} l(I^n_k) < \eps{2^n}\]
 
 Veljum gagntæka vörpun $\sigma: \N \to \N^2$ og skrifum $(I^n_k)_{(m,n) \in \N^2}$ sem runu
 $(J_j)_{j \in \N}$ með hjálp $\sigma$, þ.e.a.s $J_j = I^n_k$
@@ -316,7 +318,7 @@ fyrir sérhvert $\epsilon > 0$ er til tala $x$ úr $Z_A$ þ.a. $x < \epsilon$ þ
      Leiðir beint af því að lengd bils er óháð hliðrun 
 \end{proof}
 
-\section{Lebesgue-mælanleg mengi og Lebesuge-málið}
+\section{Lebesgue-mælanleg mengi og Lebesgue-málið}
 
 Þetta skilyrði kemur frá Carathéodory.
 
