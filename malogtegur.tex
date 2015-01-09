@@ -11,6 +11,7 @@
 \newcommand{\cP}{\mathcal{P}}
 \newcommand{\cF}{\mathcal{F}}
 \newcommand{\cS}{\mathcal{S}}
+\newcommand{\cM}{\mathcal{M}}
 
 
 
@@ -359,20 +360,67 @@ fyrir sérhvert $\epsilon > 0$ er til tala $x$ úr $Z_A$ þ.a. $x < \epsilon$ þ
 
   \item Látum okkur nægja að skoða bil af gerðinni $I = [a;b]$. Tökum $A \subseteq \R$
     og $\epsilon > 0$. Veljum þakningu $(I_n)_{n\geq 1}$ af bilum fyrir $A$,
-    sem uppfyllir $m^*(A) \leq m^*(A) \leq \sumoinfty l(I_n) \leq m^*(A) + \epsilon$
+    sem uppfyllir $m^*(A) \leq m^*(A) \leq \sum_{k=1}^{\infty} l(I_n) \leq m^*(A) + \epsilon$
     Ljóst er að bilin $I_n' := I_n \cap [a,b]$ þekja $A \cap [a,b]$, svo að
-    $m^*(A \cap [a,b]) \leq \sumoinfty l(I_n')$.
+    $m^*(A \cap [a,b]) \leq \sum_{k=1}^{\infty} l(I_n')$.
 
     Bilin $I_n'' := I_n \cap ]- \infty, a[$ og $I_n''' := I_n \cap ]b, \infty [ $
     þekja  $A \cap ]a,b[^c$ svo að
 
-\[ m^*(A \cap [a,b]^c) \leq \sumoinfty l(I_n'') + \sumoinfty l(I_n''') \]
+\[ m^*(A \cap [a,b]^c) \leq \sum_{k=1}^{\infty} l(I_n'') + \sum_{k=1}^{\infty} l(I_n''') \]
   \end{enumerate}
   
 \end{proof}
 
-  \subsection{}
+\subsection{}
 
+\begin{proof}
+  \begin{enumerate}[(i)]
+  \item  $\R \in \cM $:
+
+    Ef $A \subseteq \R$, þá er $A \cap \R = A$ og $A \cap \R^C = A \cap \emptyset = \emptyset$,
+svo að 
+\[ m^*(A) = \underbrace{m^*(A \cap \R)}_{= m^*(A)} +  \underbrace{m^*(A\cap \R^C}_{= 0}\]
+\item Ef $E \in \cM$ og $A \subseteq \R$, þá gildir
+\[ m^*(A) = m^*(A \cap E) + m^*(A \cap E^C) = m^*(A \cap ( E^C)^C) + m^*(A \cap E^C) \]
+svo að $E^C \in \cM$
+\item Gerum fyrst ráð fyrir að $(E_k)_{k \geq 1}$ sé runa af innbyrðis sundurlægum mengjum úr $\cM$.
+
+  \begin{itemize}
+  \item Byrjum á að sýna með þrepun, að fyrir sérhvert $A \subseteq \R$ gildi:
+    \[ m^*(A) = \sum_{k=1}^n m^*(A \cap E_k) + m^*(A \cap (\bigcup_{k=1}^n E_k)^C) \]
+
+    $\mathbf{n = 1}$: \[m^*(A) = m^*(A \cap E_1) + m^*(A \cap E_1^C) \text{ vegna } E_1 \in \cM \]
+
+
+    $\mathbf{(n-1) \Rightarrow n}$: Látum $A \subseteq \R$. Þar sem $E_n$ er úr $\cM$, þá
+    fæst:
+    \[ m^*(A \cap (\bigcup_{k=1}^{n-1} E_k)^C) =  m^*(A \cap (\bigcup_{k=1}^{n-1} E_k)^C \cap E_n) +  m^*(A \cap (\bigcup_{k=1}^{n-1} E_k)^C \cap E^C) \]
+
+    Nú er $(\bigcup_{k=1}^{n-1} E_k)^C \cap E_n = E_n$ ( $E_k$-in eru innb. sundurlæg).
+    svo umskrifa má síðustu jöfnuna:
+      \[ \ub{m^*(A \cap (\bigcup_{k=1}^{n-1} E_k)^C)}{$= m^*(A) - \sum_{k=1}^n m^*(A \cap E_k)$ skv. þf. } = m^*(A \cap E_n) + m^*(A \cap (\bigcup_{k=1}^{n} E_k)^C ) \]
+      með því að nota de Morgan,
+      og því
+      \[ m^*(A) = \underbrace{\sum_{k=1}^{n-1} m^*(A \cap E_k) + m^*(A \cap E_n)}_{\sum_{k=1}^{n} m^*(A\cap E_k)} + m^*(A \cap (\bigcup_{k=1}^{n} E_k)^C) \]
+    \item Sýnum nú að $\bigcup_{k \geq 1} E_k \in \cM$ og $m^*(\bigcup_{k \geq 1} E_k) = \sum_{k=1}^{\infty} m^*(E_k)$.
+
+      Þar sem $(\bigcup_{k=1}^{\infty} E_k)^C \subseteq (\bigcup_{k=1}^n E_k)^C$ fyrir öll $n$, þá fæst:
+      \[ m^*(A) \geq \sum_{k=1}^n m^*(A \cap E_k) + m^*(A \cap (\bigcup_{k=1}^{\infty} E_k)^C) \: \forall n \in \N. \]
+      
+      Meeð því að láta $n \to \infty$ fæst því
+      \begin{gather*}
+        m^*(A) \geq \sum_{k=1}^{\infty} m^*(A \cap E_k) + m^*(A \cap (\bigcup_{k=1}^{\infty} E_k)^C)\\
+        \geq m^*(A \cap [\bigcup_{k=1}^{\infty} E_k]) + m^*(A \cap (\bigcup_{k=1}^{\infty} E_k)^C)
+      \end{gather*}
+
+      Bæði ójöfnumerkin eru því jafnaðarmerki, svo að $\bigcup_{k=1}^{\infty} E_k \in \cM$  og
+      \[ m^*(A) = \sum_{k=1}^{\infty} m^*(A \cap E_k) + m^*(A \cap (\bigcup_{k=1}^{\infty} E_k)^C) \]
+
+Með því að taka $A = \bigcup_{k=1}^{\infty} E_k$ fáum við \[m^*(\bigcup_{k=1}^{\infty} E_k) = \sum_{k=1}^{\infty} m^*(E_k) + \underbrace{m^*(\emptyset)}_{= 0}\]
+  \end{itemize}
+  \end{enumerate}
+\end{proof}
 \subsection{}
 
 \begin{enumerate}[\textbf{\arabic*}.]
@@ -411,7 +459,34 @@ $\sigma$-algebra á $\lambda$.
   \emph{Borel-algebran} á $\Omega$; hún er einnig framleidd af lokuðum mengjum.
 \end{enumerate}
 
+\subsection{}
 
+\begin{daemi}
+  \begin{enumerate}[\arabic*.]
+  \item $\mu_1, \mu_2$: $\cP(\Omega) \to [0, \infty]$
+    \[ \left. \begin{array}{l}
+                \mu_1 (E) = 0 \: \forall E \in \cP(\Omega)\\
+                \mu_2 (\emptyset) = 0, \mu_2(E) = \infty \Ef E \neq \emptyset \\
+                \end{array}
+                \right\} \text{ mál á $\cP(\Omega)$}
+                \]
+              \begin{ath}
+                $\mu_1 = \mu_2 \Leftrightarrow \Omega = \emptyset$
+              \end{ath}
+
+
+            \item Tökum punkt $p$ úr $\Omega$. Fallið $\mu: \cP(\Omega) \to [0,\infty]$
+sem skilgr. er með \[ \mu(E) := \bcondef 0 & \Ef p \not\in E\\ 1 & \Ef p \in E \econdef \]
+er mál á $\cP(\Omega)$.
+\item $\mu: \cP(\N) \to [0, \infty], \mu(E) = \#(E)$ er mál, oft kallað \emph{talningarmálið} á $\N$.
+              \end{enumerate}
+
+  
+\end{daemi}
+
+\section{Seinni fyrirlestur}
+
+Farið var í sönnun á 3.1.3.
 
  
 \end{document}
