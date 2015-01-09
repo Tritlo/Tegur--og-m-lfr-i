@@ -9,6 +9,8 @@
 \date{Vor 2015}
 
 \newcommand{\cP}{\mathcal{P}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cS}{\mathcal{S}}
 
 
 
@@ -18,6 +20,7 @@
 
 \tableofcontents
 
+\chapter{2015-01-05}
 \section{Mengi: Ritháttur og upprifjun}
 Gefum okkur að til grundvallar liggi ``hæfilega''  stórt almengi.
 
@@ -42,7 +45,6 @@ Gefum okkur að til grundvallar liggi ``hæfilega''  stórt almengi.
 \section{Firðrúm}
 Hlutmengi í firðrúmi er opið \emph{þþaa} það sé sammengi af opnum kúlum. Sér í lagi er hlutmengi í $\R$ opið \emph{þþaa} það sé sammengi af opnum bilum.
 
-\chapter{}
 \section{Riemann Darboux- heildið}
 er mjög þunglamalegt og hegðar sér illa m.t.t markgilda; runa af Riemann heildanlegum föllum getur hæglega stefnt (í sérhverjum punkti) á fall sem er ekki Riemann heildanlegt (stundum kallað einfaldlega samleitið).
 
@@ -136,7 +138,6 @@ $\sumoinfty \abs{\amn} \leq k$ og $\forall m$ og þar með $\sum_{n=1}^N \left(\
 }
 
 \end{ath}
-\chapter{?}
 
 \section*{Innskot}
 
@@ -160,7 +161,7 @@ Veljum svo $N$ það stórt að
 
 }
 
-\section{}
+\section{Fyrri fyrirlestur}
 
 \subsection{}
 \begin{proof}
@@ -179,11 +180,11 @@ $N \subseteq \R$ er núllmengi ef fyrir sérhvert $\epsilon > 0$ er til runa $(I
 $N \subseteq \bigcup I_n$ og $\sum_{n \geq 1} l(I_n) < \epsilon$.
 
 \end{ath}
-\chapter{}
+\end{proof}
+\chapter{2015-01-07}
 
 \section*{Innskot}
 
-... % Hér vantar fyrri hluta fyrsta tíma.
 {
 
 \def\mn{(m,n)}
@@ -333,6 +334,84 @@ fyrir sérhvert $\epsilon > 0$ er til tala $x$ úr $Z_A$ þ.a. $x < \epsilon$ þ
      
   \end{enumerate}
 \end{ath}
-   
+
+\chapter{2015-01-09}
+
+\section{Fyrri fyrirlestur}
+\subsection{}
+\begin{proof}
+  Við vitum að ójafnan \[m^*(A) \leq m^*(A \cap E) + m^*(A \cap E^C) \]
+  gildir alltaf.
+  
+\end{proof}
+
+\subsection{}
+\begin{proof}
+  \begin{enumerate}[(i)]
+  \item  Látum N vera núllmengi og $A \subseteq \R$. Þá fæst
+    \begin{gather*}
+      m^*(A\cap N) \leq m^*(N) = 0 \text{ vegna } A \cap N \subseteq N \\
+      m^*(A \cap N^C) \leq m^*(A) \text{ vegna } A \cap N^C \subseteq A
+    \end{gather*}
+    og því $m^* \geq m^*(A \cap N) + m^*(A\cap N^C)$.
+
+
+  \item Látum okkur nægja að skoða bil af gerðinni $I = [a;b]$. Tökum $A \subseteq \R$
+    og $\epsilon > 0$. Veljum þakningu $(I_n)_{n\geq 1}$ af bilum fyrir $A$,
+    sem uppfyllir $m^*(A) \leq m^*(A) \leq \sumoinfty l(I_n) \leq m^*(A) + \epsilon$
+    Ljóst er að bilin $I_n' := I_n \cap [a,b]$ þekja $A \cap [a,b]$, svo að
+    $m^*(A \cap [a,b]) \leq \sumoinfty l(I_n')$.
+
+    Bilin $I_n'' := I_n \cap ]- \infty, a[$ og $I_n''' := I_n \cap ]b, \infty [ $
+    þekja  $A \cap ]a,b[^c$ svo að
+
+\[ m^*(A \cap [a,b]^c) \leq \sumoinfty l(I_n'') + \sumoinfty l(I_n''') \]
+  \end{enumerate}
+  
+\end{proof}
+
+  \subsection{}
+
+\subsection{}
+
+\begin{enumerate}[\textbf{\arabic*}.]
+\item  $\cP(\Omega)$ er $\sigma$-algebra.
+\item $\set{\emptyset, \Omega}$ er $\sigma$-algebra.
+\item $ \Omega := \N, O = \set{1,3,5,\dotsc}, J = \set{2,4,6,\dotsc}$.
+Þá er $\set{\emptyset, O, J,\N}$ $\sigma$-algebra
+\item  Látum $(\mathcal{F}_{\alpha})_{\alpha \in \Lambda}$ vera fjölskylda af
+$\sigma$-algebrum á $\Omega$, þá er $\bigcap_{\alpha \in \Lambda} \mathcal{F}_{\alpha}$
+$\sigma$-algebra á $\lambda$.
+\begin{itemize}
+\item $\omega \in \cF_{\alpha}$ $\forall \alpha \in \Lambda$, svo að $\Omega \in \bigcap_{\alpha \in \Lambda} \cF_{\alpha}$
+\item Ef $E \in \bigcap_{\alpha \in \Lambda} \mathcal{F}_{\alpha}$, þá er $E \in \cF_{\alpha}$ $\forall \alpha$ og
+  því $E^C \in \cF_{\alpha}$ $\forall \alpha$ og þar með $E^C \in \bigcap_{\alpha \in \Lambda} \mathcal{F}_{\alpha}$
+
+
+\item Ef $(E_n)_{n \geq 1}$ er runa í $\bigcap_{\alpha \in \Lambda} \mathcal{F}_{\alpha}$, þá er $(E_n)_{n \geq 1}$
+  runa í $\cF_{\alpha}$ $\forall \alpha$ og því $\bigcup_{n \geq 1} E_n \in \cF_{\alpha}$ $\forall \alpha$ og þar með
+  $\bigcup_{n\geq 1} E_n \in \cF_{\alpha}$
+
+\item
+  \begin{ath}
+    
+  Ef $\Lambda = \emptyset$, þá er $\bigcap_{\alpha \in \emptyset} \cF_{\alpha}$ = $\cP(\Omega)$ (almengið).
+\end{ath}
+\end{itemize}
+
+\item Ef $\cS$ er eitthver safn hlutmengja í $\Omega$, þá er sniðmengi allra $\sigma$-algebra á $\Omega$, sem
+  innihalda $\cS$ kölluð \emph{$\sigma$-algebran sem $\cS$ framleiðir}.
+  Köllsum hana $\cF_{\cS}$. Hún hefur eftirfarandi eiginleika (þ.e.a.s hún er minnst allra
+  $\sigma$-algebra sem innihalda $\cS$): Ef $\cF$ er $\sigma$-algebra á $\Omega$ og $\cS \subseteq \cF$, þá
+  $\cF_{\cS} \subseteq \cF$
+
+
+\item  Ef $\Omega$ er firðrúm (grannrúm), þá kallast $\sigma$-algebran, sem opnu mengin framleiða,
+  \emph{Borel-algebran} á $\Omega$; hún er einnig framleidd af lokuðum mengjum.
+\end{enumerate}
+
+
+
+ 
 \end{document}
 
