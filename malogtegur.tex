@@ -64,8 +64,8 @@ Flokkurinn er mun þjálli m.t.t. ýmissa aðgerða, sérstaklega markgildistök
 \section{Núllmengi}
 \subsection{Dæmi}
 \begin{enumerate}[i)]
-\item Öll teljanleg hlutmengi í $\R$ eru Núllmengi: Ef $(x_n)_{n \geq 1}$ er upptalning á stökum teljanlegs mengis, þá er $A = \cup_{n \geq 1} [x_n, x_n]$ og $\sum_{n = 1}^{\infty} l([x_n,x_n]) = \sum_{n=1}^{\infty} 0 = 0$
-\item $l(\emptyset) = l(]0,0[) = 0$, svo að $\emptyset$ er núllmengi.
+\item Öll teljanleg hlutmengi í $\R$ eru Núllmengi: Ef $(x_n)_{n \geq 1}$ er upptalning á stökum teljanlegs mengis, þá er $A = \cup_{n \geq 1} [x_n, x_n]$ og $\sum_{n = 1}^{\infty} \ell([x_n,x_n]) = \sum_{n=1}^{\infty} 0 = 0$
+\item $\ell(\emptyset) = \ell(]0,0[) = 0$, svo að $\emptyset$ er núllmengi.
 \end{enumerate}
 
 \section*{Innskot}
@@ -140,28 +140,6 @@ $\sumoinfty \abs{\amn} \leq k$ og $\forall m$ og þar með $\sum_{n=1}^N \left(\
 
 \end{ath}
 
-\section*{Innskot}
-
-{
-
-\def\mn{(m,n)}
-\def\amn{a_{m,n}}
-\def\summn{\sum_{\mn \in \N^2}}
-
-... % Hér vantar fyrri hluta fyrsta tíma.
-Þá gildir um öll $M$ og $N$ að $\sum_{m=1}^{\infty} \sum_{n=1}^{\infty} \abs{\amn} \leq \summinfty (\sumoinfty \abs{\amn})$, svo að $\sum_{\mn \in \N^2} \amn$ er alsamleitin.
-
-Sýnum að þá sé $\summinfty ( \sumoinfty \amn ) = \summn \amn$.
-
-Nú: Gefum okkur $\epsilon > 0$. Veljum M svo stórt að $\summinfty ( \sumoinfty \amn ) < \eps{4}$.
-
-Veljum svo $N$ það stórt að
-
-... % vantar smá af einni töflu
-
-
-}
-
 \section{Fyrri fyrirlestur}
 
 \subsection{}
@@ -169,7 +147,7 @@ Veljum svo $N$ það stórt að
 
 Gefum okkur $\epsilon > 0$. Fyrir hvert m veljum við runu $(I^n_k)_{k \geq 1}$ af bilum sem uppfyllir
 
-\[N_n \subset \bigcup_{k \geq 1} I_k^n \text{ og } \sumninfty{k} l(I^n_k) < \eps{2^n}\]
+\[N_n \subset \bigcup_{k \geq 1} I_k^n \text{ og } \sumninfty{k} \ell(I^n_k) < \eps{2^n}\]
 
 Veljum gagntæka vörpun $\sigma: \N \to \N^2$ og skrifum $(I^n_k)_{(m,n) \in \N^2}$ sem runu
 $(J_j)_{j \in \N}$ með hjálp $\sigma$, þ.e.a.s $J_j = I^n_k$
@@ -178,7 +156,7 @@ $(J_j)_{j \in \N}$ með hjálp $\sigma$, þ.e.a.s $J_j = I^n_k$
 
 \begin{ath}
 $N \subseteq \R$ er núllmengi ef fyrir sérhvert $\epsilon > 0$ er til runa $(I_n)_{n}$ af bilum þ.a.
-$N \subseteq \bigcup I_n$ og $\sum_{n \geq 1} l(I_n) < \epsilon$.
+$N \subseteq \bigcup I_n$ og $\sum_{n \geq 1} \ell(I_n) < \epsilon$.
 
 \end{ath}
 \end{proof}
@@ -222,7 +200,7 @@ Hér líkur innskoti.
 
 Gefum okkur $\epsilon > 0$. Fyrir hvert m veljum við runu $(I^n_k)_{k \geq 1}$ af bilum sem uppfyllir
 
-\[N_n \subset \bigcup_{k \geq 1} I_k^n \text{ og } \sumninfty{k} l(I^n_k) < \eps{2^n}\]
+\[N_n \subset \bigcup_{k \geq 1} I_k^n \text{ og } \sumninfty{k} \ell(I^n_k) < \eps{2^n}\]
 
 Veljum gagntæka vörpun $\sigma: \N \to \N^2$ og skrifum $(I^n_k)_{(m,n) \in \N^2}$ sem runu
 $(J_j)_{j \in \N}$ með hjálp $\sigma$, þ.e.a.s $J_j = I^n_k$
@@ -231,13 +209,13 @@ $(J_j)_{j \in \N}$ með hjálp $\sigma$, þ.e.a.s $J_j = I^n_k$
 
 \begin{ath}
 $N \subseteq \R$ er núllmengi ef fyrir sérhvert $\epsilon > 0$ er til runa $(I_n)_{n}$ af bilum þ.a.
-$N \subseteq \bigcup I_n$ og $\sum_{n \geq 1} l(I_n) < \epsilon$.
+$N \subseteq \bigcup I_n$ og $\sum_{n \geq 1} \ell(I_n) < \epsilon$.
 
 \end{ath}
 
 Ljóst er að $N = \bigcup_{n \geq 1} N_n \subseteq \bigcup_{(m,n) \in \N^2} I^n_k = \bigcup_{j \geq 1} J_j$
 og skv. innskotinu hér að framan fæst þá að
-$\sumninfty{j} l(J_j) = \sumoinfty ( \sumninfty{k} l(I_k^n)) < \sumninfty{n} \eps{2^n} = \epsilon$
+$\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) < \sumninfty{n} \eps{2^n} = \epsilon$
 
 \end{proof}
 
@@ -252,11 +230,12 @@ $\sumninfty{j} l(J_j) = \sumoinfty ( \sumninfty{k} l(I_k^n)) < \sumninfty{n} \ep
 F. öll $A \subseteq \R$ gildir
 \begin{itemize}
 \item $m^*(A) \geq 0$
+  
 \item $Z_A$ er af gerðinni $]r, \infty]$ eða $[r,\infty]$.
 \end{itemize}
 \end{ath}
 \begin{proof}[Sönnun á setn 2.2.2]
-A er núllmengi þþaa fyrir sérhver $\epsilon > 0$ sé til runa af bilum $(I_n)_{n \geq 1}$ þ.a. $A \subset \bigcup_{n \geq 1} I_n$ og $\sum_{n \geq 1} l(I_n) < \epsilon$ þþaa
+A er núllmengi þþaa fyrir sérhver $\epsilon > 0$ sé til runa af bilum $(I_n)_{n \geq 1}$ þ.a. $A \subset \bigcup_{n \geq 1} I_n$ og $\sum_{n \geq 1} \ell(I_n) < \epsilon$ þþaa
 fyrir sérhvert $\epsilon > 0$ er til tala $x$ úr $Z_A$ þ.a. $x < \epsilon$ þþaa $m^*(A) = \inf{Z_A} = 0$
 \end{proof}
 
@@ -265,39 +244,39 @@ fyrir sérhvert $\epsilon > 0$ er til tala $x$ úr $Z_A$ þ.a. $x < \epsilon$ þ
 
 \section*{Æfing}
 \begin{enumerate}[(a)]
-    \item Látum $I_1, \dotsc, I_n$ vera rauntalna bil sem uppfylla $[a,b] \subseteq I_1 \cup \dotsb \cup I_n$. Sýnið að $b - a \leq l(I_1) + \dotsb + l(I_n)$.
-    \item Látum $(I_n)_{n \geq 1}$ vera runu af bilum sem þekur óendanlegt bil I. Sýnið að $\sum_{n \geq 1} l(I_n) = \infty$.
+    \item Látum $I_1, \dotsc, I_n$ vera rauntalna bil sem uppfylla $[a,b] \subseteq I_1 \cup \dotsb \cup I_n$. Sýnið að $b - a \leq \ell(I_1) + \dotsb + \ell(I_n)$.
+    \item Látum $(I_n)_{n \geq 1}$ vera runu af bilum sem þekur óendanlegt bil I. Sýnið að $\sum_{n \geq 1} \ell(I_n) = \infty$.
 \end{enumerate}
 
 
 \section*{}
 \begin{proof}[Sönnun á 2.2.4]
-    Skv. (b) í æfingunni er niðurstaðan rétt ef $I$ er ótakmarkað. Gerum því ráð fyrir að $l(I) < \infty$. Byrjum á tilfellinu $I = [a,b]$
+    Skv. (b) í æfingunni er niðurstaðan rétt ef $I$ er ótakmarkað. Gerum því ráð fyrir að $\ell(I) < \infty$. Byrjum á tilfellinu $I = [a,b]$
 
     \begin{ath}
-        Ljóst er að $m^{*}(I) \leq l(I)$ vegna þess að bilarunan $I_1 := I$ og $I_k = [0,0]$
-        fyrir $k \geq 2$ þekur $I$ og $\sumninfty{k} l(I_k) = l(I) + 0 + \dotsb + 0 = l(I)$.
+        Ljóst er að $m^{*}(I) \leq \ell(I)$ vegna þess að bilarunan $I_1 := I$ og $I_k = [0,0]$
+        fyrir $k \geq 2$ þekur $I$ og $\sumninfty{k} \ell(I_k) = \ell(I) + 0 + \dotsb + 0 = \ell(I)$.
         
-        Sönnum því $l(I) \leq m^{*} (I)$.
+        Sönnum því $\ell(I) \leq m^{*} (I)$.
     \end{ath}
     Gefum okkur $\epsilon > 0$. Þá er til bilaruna $(I_n)_{n \geq 1}$ sem uppfyllir
-    \[[a,b] \subseteq \bigcup_{n \geq 1} I_n \text{ og } 0 \sumoinfty l(I_n) \leq m^{*}([a,b]) + \eps{2}.\]
+    \[[a,b] \subseteq \bigcup_{n \geq 1} I_n \text{ og } 0 \sumoinfty \ell(I_n) \leq m^{*}([a,b]) + \eps{2}.\]
     Látum $a_n$ og $b_n$ tákna vinstri og hægri endapunkta bilsins $I_n$ og setjum $J_n := ]a_n - \eps{2}, b_n + \eps{2}[$.
-    Þá er $I_n \subseteq J_n$ og $l(I_n) = l(J_n) - \eps{2^{n+1}}$ og þar með $\sumoinfty l(J_n) = \sumoinfty l(I_n) + \eps{2}$.
-    Af því sést svo að $\sumoinfty l(J_n) \leq m^{*}([a,b]) + \epsilon$.
+    Þá er $I_n \subseteq J_n$ og $\ell(I_n) = \ell(J_n) - \eps{2^{n+1}}$ og þar með $\sumoinfty \ell(J_n) = \sumoinfty \ell(I_n) + \eps{2}$.
+    Af því sést svo að $\sumoinfty \ell(J_n) \leq m^{*}([a,b]) + \epsilon$.
     Nú er $(J_n)_n$ opin þakning á $[a,b]$, svo að til er $n_0$ þ.a. $[a,b] \subseteq J_1 \cup \dotsb \cup J_{n_0}$
-    Skv. æfingunni fæst því að $l([a,b]) \leq \sum_{n =1}^{n_0} l(J_n) < \sumoinfty l(J_m) \leq m^{*} ([a,b]) + \epsilon$.
+    Skv. æfingunni fæst því að $\ell([a,b]) \leq \sum_{n =1}^{n_0} \ell(J_n) < \sumoinfty \ell(J_m) \leq m^{*} ([a,b]) + \epsilon$.
 
     Gerum nú næst ráð fyrir að $I = ]a,b[$ og tökum eitthvert $\epsilon > 0$. Þá fæst:
     \begin{gather*}
-      l(]a,b[)  \leq l([a + \eps{2}, b - \eps{2}]) + \epsilon \\
+      \ell(]a,b[)  \leq \ell([a + \eps{2}, b - \eps{2}]) + \epsilon \\
       \leq m^{*}([a + \eps{2}, b - \eps{2}]) + \epsilon \\
       \ub{\leq}{2.2.3} m{*}(]a,b[) + \epsilon
     \end{gather*}
 
 
     Loks fæst að fyrir $I = [a,b[$ eða $I = ]a,b]$ að
-    \[l(I) = l(]a,b[) \leq m^*(]a,b[) \ub{\leq}{2.2.3} m^*(I)\]
+    \[\ell(I) = \ell(]a,b[) \leq m^*(]a,b[) \ub{\leq}{2.2.3} m^*(I)\]
 \end{proof}
 
 
@@ -306,11 +285,11 @@ fyrir sérhvert $\epsilon > 0$ er til tala $x$ úr $Z_A$ þ.a. $x < \epsilon$ þ
 
       Gefum okkur $\epsilon > 0$. Fyrir sérhvert $n \geq 1$ er til runa af bilum
       $(I^n_k)_{k \geq 1}$ sem þekja $E_n$ og uppfylla
-      $\sumninfty{k} l(I^n_k) \leq m^*(E_n) + \eps{2^n}$. Þá fæst
+      $\sumninfty{k} \ell(I^n_k) \leq m^*(E_n) + \eps{2^n}$. Þá fæst
 
       \begin{gather*}
-        m^*(\bigcup_{n=1}^{\infty} E_n) \leq \sum_{(m,n) \in \N^2} l(I_k^n)
-          \ub{=}{innskot} \sumoinfty (\sumninfty{k} l(I^n_k))\\
+        m^*(\bigcup_{n=1}^{\infty} E_n) \leq \sum_{(m,n) \in \N^2} \ell(I_k^n)
+          \ub{=}{innskot} \sumoinfty (\sumninfty{k} \ell(I^n_k))\\
           \leq \sumoinfty (m^*(E_n) + \eps{2^n}) = \sumoinfty m^*(E_n) + \epsilon
       \end{gather*}
         
@@ -326,7 +305,7 @@ fyrir sérhvert $\epsilon > 0$ er til tala $x$ úr $Z_A$ þ.a. $x < \epsilon$ þ
 \begin{ath} 
   \begin{enumerate}[(i)] 
   \item \[m^*:  \cP(\R) \to [0, \infty] \]
-    og um sérhvert bil $I$ gildir $m^{*}(I) = l(I)$
+    og um sérhvert bil $I$ gildir $m^{*}(I) = \ell(I)$
     með hjálp valfrumsendunnar er unnt að sýna fram á að til sé runa
     $(X_n)_{n\geq1}$ í $\cP(\R)$, sem eru innbyrðis sundurlæg og $m^*(\bigcup_{n\geq1}X_n) < \sumoinfty m^*(X_n)$ (*)
     Viljum því einskorða $ m^* $ við minna safn hlutmengja sem efur tiltekna eiginleika og meðal annars þannig að $=$ gildi
@@ -360,14 +339,14 @@ fyrir sérhvert $\epsilon > 0$ er til tala $x$ úr $Z_A$ þ.a. $x < \epsilon$ þ
 
   \item Látum okkur nægja að skoða bil af gerðinni $I = [a;b]$. Tökum $A \subseteq \R$
     og $\epsilon > 0$. Veljum þakningu $(I_n)_{n\geq 1}$ af bilum fyrir $A$,
-    sem uppfyllir $m^*(A) \leq m^*(A) \leq \sum_{k=1}^{\infty} l(I_n) \leq m^*(A) + \epsilon$
+    sem uppfyllir $m^*(A) \leq m^*(A) \leq \sum_{k=1}^{\infty} \ell(I_n) \leq m^*(A) + \epsilon$
     Ljóst er að bilin $I_n' := I_n \cap [a,b]$ þekja $A \cap [a,b]$, svo að
-    $m^*(A \cap [a,b]) \leq \sum_{k=1}^{\infty} l(I_n')$.
+    $m^*(A \cap [a,b]) \leq \sum_{k=1}^{\infty} \ell(I_n')$.
 
     Bilin $I_n'' := I_n \cap ]- \infty, a[$ og $I_n''' := I_n \cap ]b, \infty [ $
     þekja  $A \cap ]a,b[^c$ svo að
 
-\[ m^*(A \cap [a,b]^c) \leq \sum_{k=1}^{\infty} l(I_n'') + \sum_{k=1}^{\infty} l(I_n''') \]
+\[ m^*(A \cap [a,b]^c) \leq \sum_{k=1}^{\infty} \ell(I_n'') + \sum_{k=1}^{\infty} \ell(I_n''') \]
   \end{enumerate}
   
 \end{proof}
@@ -478,6 +457,7 @@ $\sigma$-algebra á $\lambda$.
             \item Tökum punkt $p$ úr $\Omega$. Fallið $\mu: \cP(\Omega) \to [0,\infty]$
 sem skilgr. er með \[ \mu(E) := \bcondef 0 & \Ef p \not\in E\\ 1 & \Ef p \in E \econdef \]
 er mál á $\cP(\Omega)$.
+
 \item $\mu: \cP(\N) \to [0, \infty], \mu(E) = \#(E)$ er mál, oft kallað \emph{talningarmálið} á $\N$.
               \end{enumerate}
 
@@ -487,6 +467,37 @@ er mál á $\cP(\Omega)$.
 \section{Seinni fyrirlestur}
 
 Farið var í sönnun á 3.1.3.
+
+\chapter{2015-01-12}
+
+\begin{proof}[Sönnun á setn 3.1.3 (framhald)]
+Búin að sanna (i) og (ii). (iii) Búið að sanna. Ef $(E_n)_{n \geq 1}$ er runa í $\cM$
+af innbyrðis sundurlægum mengju, þá er $\bigcup_{n \geq 1} E_n \in \cM$.
+og $m(\bigcup_{n \geq 1} E_n) = \sumoinfty m (E_n)$
+
+$\cdot$ \emph{Sýna}: sammengi endanlegra margra (ekki endilega sundurlægra) mengja úr $\cM$ sé í $\cM$.
+Okkur nægir að skoða tvö mengi.
+
+\emph{Nú}: Fyrir sérhvert $A \subseteq \R$
+ gildir að \[m^*(A) = m^*(A \cap E_1) + m^*(A \cap E_1^C)\]
+ og \[m^*(A \cap E_1^C)  = m^*(A \cap E_1^C \cap E_2) + \underbrace{m^*(A \cap E_1^C \cap E_2^C}_{m^*(A \cap (E_1 \cup E_2)^C)}\]
+ og því
+ \begin{gather*}
+   m^*(A) = \underbrace{m^*(A \cap E_1) + m^*(A \cap E_1^C \cap
+     E_2)}_{\geq m^*(A \cap (E_1 \cup E_2))} + m^*(A \cap (E_1 \cup E_2)^C)\\
+    \geq m*(A \cap (E_1 \cup E_2)) + m^*(A \cap (E_1 \cup E_2)^C)
+  \end{gather*}
+
+  og því $E_1 \cup E_2 \in \cM$.
+
+  Skv. (ii) fæst því (de morgan) að enandlegt sniðmengi mengja úr $\cM$ er í $\cM$.
+
+  $\cdot$ Lokahnykkur: Látum $(E_k)_{k \geq 1}$ vera runu í $\cM$ og śynum að
+  $\bigcup_{k \geq 1} E_k \in \cM$. Mengin $F_1 := E_1$, $F_2 := E_1 \setminus E_1$,
+  $F_k := E_k \setminus \underbrace{\bigcup_{j=1}^{k-1} E_j}_{E_k \cap (\bigcup_{j=1}^{k-1} E_j)^C}, \dotsc$ eru í $\cM$.
+  og auðséð er að $\bigcup_{k \geq 1} F_k = \bigcup_{k \geq 1} E_k$. Þar með
+  er $\bigcup_{k \geq 1} E_k \in \cM$ vegna þess að $F_k$-in eru innbyrðis sundurlæg.
+\end{proof}
 
  
 \end{document}
