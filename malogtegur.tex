@@ -26,7 +26,7 @@
 Gefum okkur að til grundvallar liggi ``hæfilega''  stórt almengi.
 
 \begin{itemize}
-\item Fjölskylda af hlutmengjum í mengi M er vörpun \(a: \Lambda \to \mathcal{P}(M) \). Skrifum í stað $a(\alpha)$ og táknum $a$ með $(A_{\alpha})_{\alpha \in \Lambda}$. $\Lambda$ kallast \emph{stikamengi} fjölskyldunnar.
+\item Fjölskylda af hlutmengjum í mengi M er vörpun $a: \Lambda \to \mathcal{P}(M) $. Skrifum í stað $a(\alpha)$ og táknum $a$ með $(A_{\alpha})_{\alpha \in \Lambda}$. $\Lambda$ kallast \emph{stikamengi} fjölskyldunnar.
 \item \[ \bigcap_{\alpha \in \Lambda} := \set{x \in M | x \in A_{\alpha} \text{ f. \emph{öll} $\alpha$ úr $\Lambda$}}\]
 \item \[ \bigcup_{\alpha \in \Lambda} := \set{x \in M | x \in A_{\alpha} \text{ f. \emph{eitthvert} $\alpha$ úr $\Lambda$}}\]
 
@@ -471,6 +471,7 @@ Farið var í sönnun á 3.1.3.
 \chapter{2015-01-12}
 
 \begin{proof}[Sönnun á setn 3.1.3 (framhald)]
+  
 Búin að sanna (i) og (ii). (iii) Búið að sanna. Ef $(E_n)_{n \geq 1}$ er runa í $\cM$
 af innbyrðis sundurlægum mengju, þá er $\bigcup_{n \geq 1} E_n \in \cM$.
 og $m(\bigcup_{n \geq 1} E_n) = \sumoinfty m (E_n)$
@@ -548,21 +549,73 @@ Okkur nægir að skoða tvö mengi.
     og $m(O_n \setminus A_n) \leq \f{\varepsilon}{2^n}$.
     Þá er $O := \bigcup_{n \geq 1} O_n$ opið.
     $A \subseteq O$ og 
+
 \[O \setminus A = \bigcup_{n \geq 1} O_n \setminus \bigcup_{n \geq 1} A_n \subseteq_{n \geq 1} (O_n \setminus A_n)\]
 Þar með fæst \[ m(O \setminus A) \leq \sumoinfty m(O_n \setminus A_n) \leq \varepsilon \]
-    
-    
+   
+\item Fyrir sérhvert $n \geq 1$ veljum við  (skv. (i)) opið mengi
+$O_n$ sem uppfyllir $A \subseteq O_n$ og $m(O_n) \leq m^*(A) + \1{n}$. Þá er 
+$\bigcap_{n\geq 1} O_n \in \cM$ og $m(\bigcap_{n\geq 1} O_n) \leq m(O_n) \leq m^*(A) + \1{n} $
+fyrir öll $n$ svo að $m(\bigcap_{n \geq 1} O_n) = m^*(A)$.
+
   \end{enumerate}
 \end{proof}
 
-\section{Seinni fyrirlestur}
+\subsection{}
+
+\begin{proof}
+  \begin{enumerate}[(i)]
+  \item Fyrst runan er vaxandi, þá er $A_n = \bigcup_{i=1}^{n} A_i$
+    fyrir öll $n$. setjum $B_1 = A_1, B_i = A_i \setminus A_{i-1}$ fyrir $i \geq 2$.
+    Þá er $\bigcup_{i=1}^n B_i = A_n$ fyrir öll $n$ og $B_i \cap B_j = \emptyset$ ef
+    $i \neq j$. Við fáum því
+    \[ m(\bigcup_{i=1}^{\infty} A_i) = m(\bigcup_{i=1}^{\infty} B_i)
+    = \sum_{i=1}^{\infty} B_i = \lim_{n \to \infty} \sum_{i =1}^n m(B_i)
+    = \lim_{n \to \infty} \bigcup_{i=1}^n B_i  = \lim_{n \to \infty} m(A_n)\]
+
+  \item Fyrst runan er minnkandi, þá er runan $(A_1 \setminus A_n)_{n \geq 1}$
+    vaxandi svo skv. (i) fæst:
+    \[m(\bigcup_{n\geq 1} (A_1 \setminus A_n)) = \lim_{n \to \infty} m(A_1 \setminus A_n)\]
+    Við höfum einnig:
+    \begin{itemize}
+    \item  $m(A_1 \setminus A_n) = m(A_1) - m(A_n)$
+    \item $\bigcup_{n \geq 1} (A_1 \setminus A_n)  = A_1 \setminus \bigcap_{n \geq 1} A_n$ (de Morgan)
+    \end{itemize}
+    Fáum því 
+    \begin{gather*}
+      m(\bigcup_{n \geq 1} (A_1 \setminus A_n))
+      = m(A_1) - m(\bigcap_{n \geq 1} A_n)\\
+      = \lim_{n \to \infty} [m(A_1) - m(A_n)]\\
+      = m(A_1) - \lim_{n \to \infty} m(A_n) 
+    \end{gather*}
+    og þar með $m(\bigcap_{n \geq 1} A_n) = \lim_{n \to \infty} m(A_n)$.
+  \end{enumerate}
+\end{proof}
+
+\begin{proof}[Æfing]
+  Er niðurstaðan í (ii) rétt ef $m(A_1) < \infty$ er sleppt?
+  \begin{lausn}
+    Nei: Ef $A_n = [n, \infty[$, þá $\lim (A_n) = \infty$
+    en $\bigcap_{n \geq 1} A_n = \emptyset$.
+  \end{lausn}
+\end{proof}
+
+\begin{ath}
+  Sönnunin notar enga sérstaka eiginleika Lebesgue málsins.
+\end{ath}
+
+\subsection{}
+
+\begin{proof}
+  \begin{enumerate}[(i)]
+  \item Klifun
+  \item Megum gera ráð fyrir að $m(B_1) < \infty$. Af setn 4.1.4 (ii) leiðir
+    þá að
+    \[ 0 = m(\emptyset) = m(\bigcap_{n \geq 1} B_n)
+    = \lim_{n \to \infty} m(B_n) \]
+    \end{enumerate}
+\end{proof}
 
 
-
-
-
-
-
- 
 \end{document}
 
