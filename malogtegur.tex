@@ -487,9 +487,7 @@ Okkur nægir að skoða tvö mengi.
      E_2)}_{\geq m^*(A \cap (E_1 \cup E_2))} + m^*(A \cap (E_1 \cup E_2)^C)\\
     \geq m*(A \cap (E_1 \cup E_2)) + m^*(A \cap (E_1 \cup E_2)^C)
   \end{gather*}
-
   og því $E_1 \cup E_2 \in \cM$.
-
   Skv. (ii) fæst því (de morgan) að enandlegt sniðmengi mengja úr $\cM$ er í $\cM$.
 
   $\cdot$ Lokahnykkur: Látum $(E_k)_{k \geq 1}$ vera runu í $\cM$ og śynum að
@@ -498,6 +496,72 @@ Okkur nægir að skoða tvö mengi.
   og auðséð er að $\bigcup_{k \geq 1} F_k = \bigcup_{k \geq 1} E_k$. Þar með
   er $\bigcup_{k \geq 1} E_k \in \cM$ vegna þess að $F_k$-in eru innbyrðis sundurlæg.
 \end{proof}
+
+\section{Fyrri fyrirlestur}
+\subsection{}
+\begin{proof}
+  \begin{enumerate}[(i)]
+  \item \[ m(A) = m^*(A) \leq m^*(B) = m(B) \]
+  \item Vitum skv. síðustu sönnun að endanl. sammengi af mengjum úr $\cM$ eru
+    í $\cM$.
+    Nú: Ef $A \subseteq B$, þá $B \setminus A = B \cap A^C \in \cM$
+    og $B = A \cup (B \setminus A)$ með $A \cap (B \setminus A) = \emptyset$.
+    Þar með er $m(B) = m(A) + m(B \setminus A)$ og því
+    $m(B \setminus A) = m(B) - m(A)$.
+
+  \item Leiðir beint af því að $m^*$ er óháð hliðrun.
+  \end{enumerate}
+\end{proof}
+
+\subsection{}
+\begin{proof}
+  $m^*(A \Delta B) = 0$ hefur í för með sér að $B \setminus A$ og $B \setminus A$
+  eru bæði núllmengi og þar með bæði í $\cM$. Af því leiðir að mengin
+  $ A \cap B = A \setminus (A \setminus B) $ og $B = B \setminus (B \setminus A)$
+  eru í $\cM$.
+  Við fáum því
+  \begin{gather*}
+    m(A) \underbrace{=}_{A = (A \cap B) \amalg (A \setminus B)} m( A \cap
+    B) + \underbrace{m(A \setminus B)}_{= 0}\\
+    = m(A \cap B) + \overbrace{m(B \setminus A)}^{= 0} \underbrace{=}_{B = (A \cap B) \amalg
+      (B \setminus A)} m(B)
+  \end{gather*}
+\end{proof}
+
+\subsection{}
+
+\begin{proof}
+  \begin{enumerate}[(i)]
+  \item Til er runa af \emph{opnum} bilum $(I_n)_{n \geq 1}$ þ.a.
+    $A \subseteq \bigcup_{n \geq 1} I_n$ og
+    \[ \sum_{n \geq 1} \underbrace{m(I_n)}_{= \ell(I_n)} \leq m^*(A) + \varepsilon \]
+    Setjum $O := \bigcup_{n \geq 1} I_n$ og fáum að O er opið mengi og
+    $ m(O) \leq \sum_{n \geq 1} m(I_n) \leq m^*(A) + \varepsilon$
+  \item Gerum fyrst ráð fyrir að $m(A) < \infty$ og veljum O eins og í (i) með
+    $\f{\varepsilon}{2}$ í stað $\varepsilon$.
+    Þá fæst að $m(O \setminus A) = m(O) - m(A) < \varepsilon$
+
+    Í tilfellinu $m(A) = \infty$ setjum við, fyrir sérhvert $n \geq 1$,
+    $A_n := A \cap [-n,n]$.
+    Þar sem $m(A_n) \leq 2 n \: \forall n$
+    þá er til opið $O_n$ þ.a. $A_n \subseteq O_n$
+    og $m(O_n \setminus A_n) \leq \f{\varepsilon}{2^n}$.
+    Þá er $O := \bigcup_{n \geq 1} O_n$ opið.
+    $A \subseteq O$ og 
+\[O \setminus A = \bigcup_{n \geq 1} O_n \setminus \bigcup_{n \geq 1} A_n \subseteq_{n \geq 1} (O_n \setminus A_n)\]
+Þar með fæst \[ m(O \setminus A) \leq \sumoinfty m(O_n \setminus A_n) \leq \varepsilon \]
+    
+    
+  \end{enumerate}
+\end{proof}
+
+\section{Seinni fyrirlestur}
+
+
+
+
+
+
 
  
 \end{document}
