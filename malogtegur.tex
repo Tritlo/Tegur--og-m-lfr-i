@@ -1,13 +1,83 @@
-\documentclass[12pt]{book} \usepackage[utf8]{inputenc}
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
 
 \input{header.tex}
 
 \title{Tegur- og Málfræði} \subtitle{Fyrirlestrarnótur}
 \author{Matthías Páll Gissurarson} \date{Vor 2015}
 
-\newcommand{\cP}{\mathcal{P}} \newcommand{\cF}{\mathcal{F}}
-\newcommand{\cS}{\mathcal{S}} \newcommand{\cM}{\mathcal{M}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cM}{\mathcal{M}}
 
+
+%frá JIM
+
+\newcommand{\Om}{\Omega}
+\renewcommand{\Bbb}{\mathbb}
+\newcommand{\Cn}{{\Bbb  C\sp n}}
+\newcommand{\crn}{{{\Bbb  C\Bbb  R^n}}}
+\newcommand{\Rn}{{\Bbb  R\sp n}}
+\renewcommand{\P}{{\Bbb  P}}
+\newcommand{\A}{{\cal A}}
+\newcommand{\D}{{\cal D}}
+\newcommand{\B}{{\cal B}}
+\newcommand{\I}{{\cal I}}
+\newcommand{\E}{{\cal E}}
+\newcommand{\F}{{\cal F}}
+\newcommand{\G}{{\cal G}}
+\renewcommand{\H}{{\cal H}}
+\renewcommand{\L}{{\cal L}}
+\newcommand{\M}{{\cal M}}
+\renewcommand{\S}{{\cal S}}
+\newcommand{\dash}{{\sp{\prime}}}
+\newcommand{\ddash}{{\sp{\prime\prime}}}
+\newcommand{\tdash}{{\sp{\prime\prime\prime}}}
+\newcommand{\scalar}[2]{{\langle#1,#2\rangle}}
+\newcommand{\arccot}{{\operatorname{arccot}}}
+\newcommand{\arccoth}{{\operatorname{arccoth}}}
+\newcommand{\arccosh}{{\operatorname{arccosh}}}
+\newcommand{\arcsinh}{{\operatorname{arcsinh}}}
+\newcommand{\arctanh}{{\operatorname{arctanh}}}
+\newcommand{\Log}{{\operatorname{Log}}}
+\newcommand{\Arg}{{\operatorname{Arg}}}
+\newcommand{\grad}{{\operatorname{grad}}}
+\newcommand{\graf}{{\operatorname{graf}}}
+\renewcommand{\div}{{\operatorname{div}}}
+\newcommand{\rot}{{\operatorname{rot}}}
+\newcommand{\curl}{{\operatorname{curl}}}
+\renewcommand{\Im}{{\operatorname{Im}}}
+\renewcommand{\Re}{{\operatorname{Re}}}
+\newcommand{\Res}{{\operatorname{Res}}}
+\newcommand{\vp}{{\operatorname{vp}}}
+\newcommand{\mynd}[1]{{{\operatorname{mynd}(#1)}}}
+\newcommand{\dbar}{{{\overline\partial}}}
+\newcommand{\inv}{{\operatorname{inv}}}
+\newcommand{\sign}{{\operatorname{sign}}}
+\newcommand{\trace}{{\operatorname{trace}}}
+\newcommand{\conv}{{\operatorname{conv}}}
+\newcommand{\Span}{{\operatorname{Sp}}}
+\newcommand{\stig}{{\operatorname{stig}}}
+\newcommand{\Exp}{{\operatorname{Exp}}}
+\newcommand{\diag}{{\operatorname{diag}}}
+\newcommand{\adj}{{\operatorname{adj}}}
+\newcommand{\erf}{{\operatorname{erf}}}
+\newcommand{\erfc}{{\operatorname{erfc}}}
+\newcommand{\interior}{{\operatorname{int}}}
+\newcommand{\ext}{{\operatorname{ext}}}
+\newcommand{\Lloc}{{L_{\text{loc}}\sp 1}}
+%\newcommand{\Cinf0}[1]{{C_0\sp{\infty}(#1)}}
+\newcommand{\supp}{{\text{supp}\, }}
+\newcommand{\chsupp}{{\text{ch supp}\, }}
+\newcommand{\singsupp}{{\text{sing supp}\, }}
+\newcommand{\polh}[1]{{\widehat #1_{\C^n}}}
+\newcommand{\SL}[1]{{{  \dfrac {1}{\varrho(x)} 
+\bigg(-\dfrac d{dx}\bigg(p(x)\dfrac {d#1}{dx}\bigg)+q(x)#1\bigg)}}}
+
+
+
+% end frá JIM
 
 
 \begin{document}
@@ -17,7 +87,7 @@
 \tableofcontents
 
 \chapter{2015-01-05}
-\section{Mengi: Ritháttur og upprifjun}
+\section*{Mengi: Ritháttur og upprifjun}
 Gefum okkur að til grundvallar liggi ``hæfilega'' stórt almengi.
 
 \begin{itemize}
@@ -56,12 +126,12 @@ Gefum okkur að til grundvallar liggi ``hæfilega'' stórt almengi.
   $1_{A \cup B} = 1_A + 1_B - 1_{A \cap B}$ og $1_{A^C} = 1 - 1_A$.
 \end{itemize}
 
-\section{Firðrúm}
+\section*{Firðrúm}
 Hlutmengi í firðrúmi er opið \emph{þþaa} það sé sammengi af opnum
 kúlum. Sér í lagi er hlutmengi í $\R$ opið \emph{þþaa} það sé sammengi
 af opnum bilum.
 
-\section{Riemann Darboux- heildið}
+\section{Riemann-heildi (Darboux-útgáfan)}
 er mjög þunglamalegt og hegðar sér illa m.t.t markgilda; runa af
 Riemann heildanlegum föllum getur hæglega stefnt (í sérhverjum punkti)
 á fall sem er ekki Riemann heildanlegt (stundum kallað einfaldlega
@@ -78,25 +148,97 @@ samleitið).
   er $f_n \nearrow f$ og ljóst er að $f_n$-in eru Riemann heildanleg,
   en $f$ ekki.
 
-  Hugmyndin er sú að stækka flokk heildanlegra falla þ.a. ekki $f$
+Hugmyndin er sú að stækka flokk heildanlegra falla þ.a. ekki $f$
   gildi.
-
-  Allar eðlilegar reiknireglur varðandi heildi gilda áfram.
-
-  Flokkurinn er mun þjálli m.t.t. ýmissa aðgerða, sérstaklega
+Allar eðlilegar reiknireglur varðandi heildi gilda áfram.
+Flokkurinn er mun þjálli m.t.t. ýmissa aðgerða, sérstaklega
   markgildistöku.
 \end{daemi}
 
-\section{Núllmengi}
+Látum \ $[a,b]$ \ vera lokað bil á rauntalnalínunni. {\bf Skipting} á bilinu er endanlegt hlutmengi \ $P = \{x_0,\ldots,x_n\}$ \ í \ $[a,b]$, þar sem 
+$$
+a=x_0 < \cdots < x_n = b.
+$$
+Látum \ $f : [a,b]\rightarrow \R$ \ vera {\em takmarkað} fall og  \ $P = \{x_0,\ldots,x_n\}$ \ vera skiptingu á  \ $[a,b]$. Fyrir sérhvert \ $i\in\{0,\ldots,n\}$ \ látum við \ $m_i$ \ og \ $M_i$ \ vera tölur sem uppfylla skilyrðið
+$$
+m_i\leq f(x) \leq M_i\qquad \text{fyrir öll} \ x\in[x_{i-1},x_i].
+$$
+Talan 
+$$
+U := \sum_{i=1}^nm_i(x_i - x_{i-1})
+$$
+kallast {\bf undirsumma} fallsins \ $f$ \ á bilinu \ $[a,b]$ \ og talan 
+$$
+Y := \sum_{i=1}^nM_i(x_i - x_{i-1})
+$$
+kallast {\bf yfirsumma} fallsins \ $f$ \ á bilinu \ $[a,b]$.
+
+Við segjum að undirsumman \ $U$ \ og yfirsumman \ $Y$ \ {\bf tilheyri} skiptingunni \ $P$.
+
+Ljóst er að \ $U\leq Y$.
+
+\begin{skgr*}
+Takmarkað fall á lokuðu bili er sagt \textbf{Riemann-heildanlegt} ef fyrir sérhvert  $\varepsilon >0$  er til skipting  $P$  og  undirsumma   $U$  og yfirsumma\ $Y$, sem tilheyra henni og uppfylla skilyrðið
+\[
+Y - U < \varepsilon.
+\]
+\end{skgr*}
+
+Ekki er erfitt að sýna fram á að um sérhverja undirsummu \ $U$ \ og sérhverja yfirsummu \ $Y$ \ fyrir tiltekið fall á ákveðnu lokuðu bili gildir  \ $U\leq Y$. (Sjá til dæmis {\sc EB og JIM}).
+
+
+Látum \ $f : [a,b]\rightarrow \R$ \ vera takmarkað fall. Táknum \ $\mathcal{U}$ \ mengi allra undirsumma fallsins \ $f$ \ og táknum \ $\mathcal{Y}$ \  mengi allra yfirsumma fallsins \ $f$. Setjum svo 
+$$
+\underline{\int_a^bf} := \sup\mathcal{U}\qquad\text{og}\qquad \overline{\int_a^bf} := \inf\mathcal{Y}
+$$
+og köllum fyrri töluna {\bf undirheildi} fallsins \ $f$ \ á \ $[a,b]$ \ og seinni töluna {\bf yfirheildi} fallsins \ $f$ \ á \ $[a,b]$.
+
+\begin{setn*}
+Takmarkað fall á lokuðu bili er heildanlegt þá og því aðeins að undirheildi þess sé jafnt yfirheildinu.
+\end{setn*}
+
+\begin{skgr*}
+Ef \ $f$ \ er heildanlegt fall á lokuðu bili \ $[a,b]$, þá kallast talan 
+$$
+\underline{\int_a^bf} =  \overline{\int_a^bf}
+$$ 
+{\bf heildi} fallsins \ $f$ \ á bilinu \ $[a,b]$ \ og er yfirleitt táknuð \ $\int_a^bf$.
+\end{skgr*}
+
+Eftirfarandi setningu leiðir auðveldlega af {\em undirstöðusetningu stærðfræðigreiningarinnar}.
+
+\begin{setn*}
+Látum \ $f$ \ og \ $F$ \ vera samfelld föll á lokuðu bili \ $[a,b]$ \ og þannig að \ $F$ \ sé stofnafall fallsins \ $f$ \ á opna bilinu \ $(a,b)$. Þá er
+$$
+\int_a^bf = F(b) - F(a).
+$$
+\end{setn*}
+
+\section{Núllmengi á rauntalnalínunni}
+Við segjum að hlutmengi \ $A$ \ í \ $\R$ \ sé {\bf núllmengi} ef fyrir sérhvert \ $\varepsilon > 0$ \ er til runa af bilum \ $(I_n)_{n\geq 1}$ \ sem uppfyllir eftirfarandi tvö skilyrði
+$$
+A\subseteq\bigcup_{n\geq 1}I_n\qquad\text{og}\qquad \sum_{n=1}^{\infty}l(I_n) < \eps.
+$$
+
+\begin{skgr*}
+Við segjum að hlutmengi \ $A$ \ í \ $\R$ \ sé {\bf núllmengi} ef fyrir sérhvert \ $\eps > 0$ \ er til runa af bilum \ $(I_n)_{n\geq 1}$ \ sem uppfyllir eftirfarandi tvö skilyrði
+\[
+A\subseteq\bigcup_{n\geq 1}I_n\qquad\text{og}\qquad \sum_{n=1}^{\infty}l(I_n) < \varepsilon.
+\]
+\end{skgr*}
+
 \subsection{Dæmi}
+
+\begin{daemi}
 \begin{enumerate}[i)]
 \item Öll teljanleg hlutmengi í $\R$ eru Núllmengi: Ef
   $(x_n)_{n \geq 1}$ er upptalning á stökum teljanlegs mengis, þá er
   $A = \cup_{n \geq 1} [x_n, x_n]$ og
-  $\sum_{n = 1}^{\infty} \ell([x_n,x_n]) = \sum_{n=1}^{\infty} 0 = 0$
+  \[\sum_{n = 1}^{\infty} \ell([x_n,x_n]) = \sum_{n=1}^{\infty} 0 = 0\]
 \item $\ell(\emptyset) = \ell(]0,0[) = 0$, svo að $\emptyset$ er
   núllmengi.
 \end{enumerate}
+\end{daemi}
 
 \section*{Innskot}
 
@@ -106,6 +248,7 @@ samleitið).
   (umröðun). Þá er röðin $\sumninfty{1} a_{\sigma(n)}$ alsamleitin og
   $\sumninfty{1} a_{\sigma(n)} = \sumoinfty a_n$.
 \end{setn}
+
 \begin{proof}
   Fyrir $N > 0$ er til $M > 0$ þ.a.
   $\set{\sigma(1), \dotsc, \sigma(n)} \subseteq \set{1, \dotsc, M}$.
@@ -203,30 +346,12 @@ fyrir öll endanleg $J$ þ.a. $I \subseteq J \subseteq \Lambda $.
 
 \end{ath}
 
-\section{Fyrri fyrirlestur}
-
-\subsection{}
-\begin{proof}
-
-  Gefum okkur $\epsilon > 0$. Fyrir hvert m veljum við runu
-  $(I^n_k)_{k \geq 1}$ af bilum sem uppfyllir
-
-  \[N_n \subset \bigcup_{k \geq 1} I_k^n \text{ og } \sumninfty{k}
-  \ell(I^n_k) < \eps{2^n}\]
-
-  Veljum gagntæka vörpun $\sigma: \N \to \N^2$ og skrifum
-  $(I^n_k)_{(m,n) \in \N^2}$ sem runu $(J_j)_{j \in \N}$ með hjálp
-  $\sigma$, þ.e.a.s $J_j = I^n_k$
-
-  þþaa $\sigma (j) = (m,n)$.
-
 \begin{ath}
   $N \subseteq \R$ er núllmengi ef fyrir sérhvert $\epsilon > 0$ er
   til runa $(I_n)_{n}$ af bilum þ.a.  $N \subseteq \bigcup I_n$ og
   $\sum_{n \geq 1} \ell(I_n) < \epsilon$.
 
 \end{ath}
-\end{proof}
 \chapter{2015-01-07}
 
 \section*{Innskot}
@@ -269,7 +394,14 @@ fyrir öll endanleg $J$ þ.a. $I \subseteq J \subseteq \Lambda $.
 
 }
 
-\section{}
+\section{Núllmengi á rauntalnalínunni (framhald)}
+\begin{setn*}
+Látum \ $(N_n)_{n\geq 1}$ \ vera runu af núllmengjum. Þá er sammengið 
+\[
+N = \bigcup_{n\geq 1}N_n
+\]
+einnig núllmengi.
+\end{setn*}
 
 \begin{proof}[Sönnun á 2.1.1]
 
@@ -309,7 +441,18 @@ $\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) <
 \end{daemi}
 
 
-\section{}
+\section{Ytra mál á rauntalnalínunni}
+Fyrir hlutmengi \ $A$ \ í \ $\R$ \ látum við \ $Z_A$ \ tákna mengi allra talna af gerðinni \ $\sum\limits_{n=1}^{\infty}\ell(I_n)$ \ þar sem \ $(I_n)_{n\geq 1}$ \ er runa af bilum sem þekur \ $A$, þ.e.a.s. \ $A\subseteq\bigcup_{n\geq 1}I_n$.
+
+
+\begin{skgr*}
+Látum  \ $A$ \ vera hlutmengi í   \ $\R$. Þá kallast talan 
+$$
+m^*(A) := \inf Z_A
+$$
+{\bf ytra mál} mengisins \ $A$.
+\end{skgr*}
+
 \begin{ath}2.2.1: F. öll $A \subseteq \R$ gildir
   \begin{itemize}
   \item $m^*(A) \geq 0$
@@ -317,6 +460,10 @@ $\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) <
   \item $Z_A$ er af gerðinni $]r, \infty]$ eða $[r,\infty]$.
   \end{itemize}
 \end{ath}
+\begin{setn*}
+
+Hlutmengi \ $A$ \ í \ $\R$ \ er núllmengi þá og því aðeins að \ $m^*(A) = 0$.
+\end{setn*}
 \begin{proof}[Sönnun á setn 2.2.2]
   A er núllmengi þþaa fyrir sérhver $\epsilon > 0$ sé til runa af
   bilum $(I_n)_{n \geq 1}$ þ.a. $A \subset \bigcup_{n \geq 1} I_n$ og
@@ -325,6 +472,9 @@ $\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) <
   $m^*(A) = \inf{Z_A} = 0$
 \end{proof}
 
+\begin{setn*}
+Gerum ráð fyrir að  \ $A\subseteq B\subseteq \R$. Þá er  \ $m^*(A) \leq m^*(B)$.
+\end{setn*}
 \begin{proof}[Sönnun a setn 2.2.3] Sérhver run af bilum sem þekur $B$
   þekur líka $A$ svo að $Z_A \subseteq Z_B$ og þar með
   $m^{*}(A) = \inf{Z_A} \leq \inf{Z_B} = m^{*}$
@@ -341,6 +491,10 @@ $\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) <
 
 
 \section*{}
+\begin{setn*}
+
+Um sérhvert bil \ $I$ \ í \ $\R$ \ gildir að \ $\ell(I) = m^*(I)$.
+\end{setn*}
 \begin{proof}[Sönnun á 2.2.4]
   Skv. (b) í æfingunni er niðurstaðan rétt ef $I$ er ótakmarkað. Gerum
   því ráð fyrir að $\ell(I) < \infty$. Byrjum á tilfellinu $I = [a,b]$
@@ -381,6 +535,12 @@ $\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) <
     \[\ell(I) = \ell(]a,b[) \leq m^*(]a,b[) \ub{\leq}{2.2.3} m^*(I)\]
   \end{proof}
 
+\begin{setn*}
+Látum \ $(E_n)_{n\geq 1}$ \ vera runu af hlutmengjum í \ $\R$. Þá gildir
+\[
+m^*\left(\bigcup_{n\geq 1}E_n\right)\ \leq \ \sum_{n=1}^\infty m^*(E_n).
+\]
+\end{setn*}
 
 \begin{proof}[Sönnun á 2.2.5]
   G.r.f. að $\sumoinfty m^*(E_n) < \infty$; annars er ekkert að sanna.
@@ -398,6 +558,13 @@ $\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) <
       \end{gather*}
         
     \end{proof}
+    
+    \begin{setn*}
+    Ytra mál hlutmengis í \ $\R$ \ breytist ekki við hliðrun, m.ö.o gildir um öll hlutmengi \ $A$ \ í \ $\R$ \ og allar rauntölur \ $t$ \ að
+$$
+m^*(A + t) = m^*(A).
+$$
+    \end{setn*}
     \begin{proof}[Sö á 2.2.6]
       Leiðir beint af því að lengd bils er óháð hliðrun
     \end{proof}
@@ -424,15 +591,30 @@ $\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) <
     \end{ath}
 \chapter{2015-01-09}
 
-\section{Fyrri fyrirlestur}
-\subsection{}
+\section{Lebesgue-mælanleg mengi og Lebesgue-málið}
+
+\begin{skgr*}
+Við segjum að hlutmengi \ $E$ \ í \ $\R$ \ sé {\bf (Lebesgue-) mælanlegt} ef fyrir sérhvert hlutmengi \ $A$ \ í \ $\R$ \ gildir
+\[
+m^*(A) = m^*(A\cap E) + m^*(A\cap E^c).
+\]
+Safn allra mælanlegra mengja verður hér eftir táknaður \ $\mathcal{M}$.
+\end{skgr*}
 \begin{proof}
   Við vitum að ójafnan
   \[m^*(A) \leq m^*(A \cap E) + m^*(A \cap E^C) \] gildir alltaf.
 
 \end{proof}
 
-\subsection{}
+
+\begin{setn*}\leavevmode
+\begin{enumerate}[(i)]
+\item
+Núllmengi eru mælanleg.
+\item
+Bil eru mælanleg.
+\end{enumerate}
+\end{setn*}
 \begin{proof}
   \begin{enumerate}[(i)]
   \item Látum N vera núllmengi og $A \subseteq \R$. Þá fæst
@@ -464,7 +646,23 @@ $\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) <
 
 \end{proof}
 
-\subsection{}
+
+\begin{setn*}
+\smallskip
+Látum eins og áður \ $\mathcal{M}$ \ tákna safn allra Lebesgue-mælanlegra hlutmengja í \ $\R$. Það hefur eftirfarandi eiginleika:
+\begin{enumerate}[(i)]
+\smallskip
+\item
+$\R\in\mathcal{M}$.
+\item
+Ef \ $E\in\mathcal{M}$ \ þá \ $E^c\in\mathcal{M}$.
+\item
+Ef \ $(E_n)_{n\geq 1}$ \ er runa af mengjum í \ $\mathcal{M}$, þá er sammengið \ $\cup_{n=1}^\infty E_n$ \ einnig í \ $\mathcal{M}$. Ennfremur gildir, að séu mengin í rununni innbyrðis sundurlæg, þá 
+\[
+m^*\left(\bigcup_{n=1}^{\infty}E_n\right) \ = \ \sum_{n=1}^{\infty}m^*(E_n).
+\]
+\end{enumerate}
+\end{setn*}
 
 \begin{proof}
   \begin{enumerate}[(i)]
@@ -538,7 +736,21 @@ $\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) <
     \end{itemize}
   \end{enumerate}
 \end{proof}
-\subsection{}
+
+
+\begin{skgr*}
+Látum \ $\Omega$ \ vera mengi og \ $\F$ \ vera safn hlutmengja í \ $\Omega$. Þá er sagt að \ $\F$ \ sé \ {\bf $\sigma$-algebra} ef eftirfarandi skilyrði eru uppfyllt:
+\begin{enumerate}[(i)]
+\item
+$\Omega\in\F$.
+\item
+Ef \ $E\in\F$ \ þá \ $E^c\in\mathcal{F}$.
+\item
+Ef \ $(E_n)_{n\geq 1}$ \ er runa af mengjum í \ $\mathcal{F}$, þá er sammengið \ $\cup_{n=1}^\infty E_n$ \ einnig í \ $\mathcal{F}$. 
+\end{enumerate}
+\end{skgr*}
+
+Röðuð tvennd \ $(\Omega,\F)$, þar sem  \ $\Omega$ \ er mengi og \ $\F$ \ er \ $\sigma$-algebra af hlutmengjum í \ $\Omega$, kallast {\bf mælanlegt rúm}.
 
 \begin{enumerate}[\textbf{\arabic*}.]
 \item $\cP(\Omega)$ er $\sigma$-algebra.
@@ -590,8 +802,27 @@ $\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) <
   lokuðum mengjum.
 \end{enumerate}
 
-\subsection{}
 
+\begin{skgr*}
+Látum  \ $(\Omega,\F)$ \ vera mælanlegt rúm. Fall \ $\mu : \F\rightarrow [0,\infty]$ \ kallast {\bf mál} (á \ $\F$) ef það hefur eftirfarandi eiginleika:
+\begin{enumerate}[(i)]
+\item
+$\mu(\emptyset) = 0.$
+\item
+Ef \ $(E_n)_{n\geq 1}$ \ er runa af innbyrðis sundurlægum mengjum úr \ $\F$, þá er
+\[
+\mu\left(\bigcup_{n=1}^{\infty}E_n\right) \ = \ \sum_{n=1}^{\infty}\mu(E_n).
+\]
+\end{enumerate}
+\end{skgr*}
+
+
+Röðuð þrennd \ $(\Omega,\F,\mu)$, þar sem \ $(\Omega,\F)$ \ er mælanlegt rúm og \ $\mu$ \ er mál á \ $\F$, kallast {\bf málrúm}. 
+ 
+ \begin{ath}
+ Setning 3.1.3 segir okkur að annars vegar að safnið \ $\M$ \ sé \ $\sigma$-algebra og hins vegar að einskorðun fallsins \ $m^*$ \ við \ $\M$ \ sé mál.
+ \end{ath}
+ 
 \begin{daemi}
   \begin{enumerate}[\arabic*.]
   \item $\mu_1, \mu_2$: $\cP(\Omega) \to [0, \infty]$
@@ -619,173 +850,237 @@ $\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) <
 
 
         \end{daemi}
+\begin{skgr*}
+Fyrir \ $E$ \ úr \ $\M$ \  skrifum við yfirleitt \ $m(E)$ \ í stað \ $m^*(E)$ \ og segjum að talan \ $m(E)$ \ sé {\bf Lebesgue-málið} af \ $E$. Fallið
+\[
+m : \M\longrightarrow[0,\infty],\qquad E\longmapsto m(E)
+\]
+kallast {\bf Lebesgue-málið}.
+\end{skgr*}
 
-        \section{Seinni fyrirlestur}
+Þrenndin \ $(\R,\M,m)$ \ er málrúm
+\chapter{2015-01-12}
 
-        Farið var í sönnun á 3.1.3.
+    \begin{proof}[Sönnun á setn 3.1.3 (framhald)]
 
-        \chapter{2015-01-12}
+      Búin að sanna (i) og (ii). (iii) Búið að sanna. Ef
+      $(E_n)_{n \geq 1}$ er runa í $\cM$ af innbyrðis
+      sundurlægum mengju, þá er
+      $\bigcup_{n \geq 1} E_n \in \cM$.  og
+      $m(\bigcup_{n \geq 1} E_n) = \sumoinfty m (E_n)$
+    
+    \begin{itemize}
+    \item  \emph{Sýna}: sammengi endanlegra margra (ekki
+      endilega sundurlægra) mengja úr $\cM$ sé í $\cM$.  Okkur
+      nægir að skoða tvö mengi.
 
-        \begin{proof}[Sönnun á setn 3.1.3 (framhald)]
+      \emph{Nú}: Fyrir sérhvert $A \subseteq \R$ gildir
+      að \[m^*(A) = m^*(A \cap E_1) + m^*(A \cap E_1^C)\]
+      og
+      \[m^*(A \cap E_1^C) = m^*(A \cap E_1^C \cap E_2) +
+      \underbrace{m^*(A \cap E_1^C \cap E_2^C}_{m^*(A \cap
+        (E_1 \cup E_2)^C)}\] og því
+      \begin{gather*}
+        m^*(A) = \underbrace{m^*(A \cap E_1) + m^*(A \cap
+          E_1^C \cap
+          E_2)}_{\geq m^*(A \cap (E_1 \cup E_2))} + m^*(A \cap (E_1 \cup E_2)^C)\\
+        \geq m*(A \cap (E_1 \cup E_2)) + m^*(A \cap (E_1 \cup
+        E_2)^C)
+      \end{gather*}
+      og því $E_1 \cup E_2 \in \cM$.  Skv. (ii) fæst því (de
+      morgan) að enandlegt sniðmengi mengja úr $\cM$ er í
+      $\cM$.
 
-          Búin að sanna (i) og (ii). (iii) Búið að sanna. Ef
-          $(E_n)_{n \geq 1}$ er runa í $\cM$ af innbyrðis
-          sundurlægum mengju, þá er
-          $\bigcup_{n \geq 1} E_n \in \cM$.  og
-          $m(\bigcup_{n \geq 1} E_n) = \sumoinfty m (E_n)$
+\item
+       Lokahnykkur: Látum $(E_k)_{k \geq 1}$ vera runu
+      í $\cM$ og śynum að $\bigcup_{k \geq 1} E_k \in
+      \cM$.
+      Mengin $F_1 := E_1$, $F_2 := E_1 \setminus E_1$,
+      $F_k := E_k \setminus \underbrace{\bigcup_{j=1}^{k-1}
+        E_j}_{E_k \cap (\bigcup_{j=1}^{k-1} E_j)^C}, \dotsc$
+      eru í $\cM$.  og auðséð er að
+      $\bigcup_{k \geq 1} F_k = \bigcup_{k \geq 1} E_k$. Þar
+      með er $\bigcup_{k \geq 1} E_k \in \cM$ vegna þess að
+      $F_k$-in eru innbyrðis sundurlæg.
+      \end{itemize}
+    \end{proof}
 
-          $\cdot$ \emph{Sýna}: sammengi endanlegra margra (ekki
-          endilega sundurlægra) mengja úr $\cM$ sé í $\cM$.  Okkur
-          nægir að skoða tvö mengi.
+    \section{Grundvallareiginleikar Lebesgue-málsins}
+    
+    \begin{setn*}
+    Látum \ $A,B\in\M$.
+    \begin{enumerate}[(i)]
+    \item
+    Ef \ $A\subseteq B$, þá \ $m(A) \leq m(B)$.
+    \item
+    Ef \ $A\subseteq B$ \ og \ $m(A) < \infty$, þá gildir 
+    \[
+    m(B\setminus A) = m(B) - m(A).
+    \]
+    \item
+    Málið \ $m$ \ er óháð hliðrun.
+    \end{enumerate}
+    \end{setn*}
+    \begin{proof}
+      \begin{enumerate}[(i)]
+      \item \[ m(A) = m^*(A) \leq m^*(B) = m(B) \]
+      \item Vitum skv. síðustu sönnun að endanl. sammengi af
+        mengjum úr $\cM$ eru í $\cM$.  Nú: Ef $A \subseteq B$,
+        þá $B \setminus A = B \cap A^C \in \cM$ og
+        $B = A \cup (B \setminus A)$ með
+        $A \cap (B \setminus A) = \emptyset$.  Þar með er
+        $m(B) = m(A) + m(B \setminus A)$ og því
+        $m(B \setminus A) = m(B) - m(A)$.
 
-          \emph{Nú}: Fyrir sérhvert $A \subseteq \R$ gildir
-          að \[m^*(A) = m^*(A \cap E_1) + m^*(A \cap E_1^C)\]
-          og
-          \[m^*(A \cap E_1^C) = m^*(A \cap E_1^C \cap E_2) +
-          \underbrace{m^*(A \cap E_1^C \cap E_2^C}_{m^*(A \cap
-            (E_1 \cup E_2)^C)}\] og því
-          \begin{gather*}
-            m^*(A) = \underbrace{m^*(A \cap E_1) + m^*(A \cap
-              E_1^C \cap
-              E_2)}_{\geq m^*(A \cap (E_1 \cup E_2))} + m^*(A \cap (E_1 \cup E_2)^C)\\
-            \geq m*(A \cap (E_1 \cup E_2)) + m^*(A \cap (E_1 \cup
-            E_2)^C)
-          \end{gather*}
-          og því $E_1 \cup E_2 \in \cM$.  Skv. (ii) fæst því (de
-          morgan) að enandlegt sniðmengi mengja úr $\cM$ er í
-          $\cM$.
+      \item Leiðir beint af því að $m^*$ er óháð hliðrun.
+      \end{enumerate}
+    \end{proof}
+    
+    \begin{ath}[Upprifjun]
+    {\em Samhverfur mismunur} tveggja hlutmengja \ $X$ \ og \ $Y$ \ í tilteknu mengi er hlutmengið
+\[
+X\Delta Y = (X\setminus Y)\cup(Y\setminus X).
+\]
+\end{ath}
 
-          $\cdot$ Lokahnykkur: Látum $(E_k)_{k \geq 1}$ vera runu
-          í $\cM$ og śynum að $\bigcup_{k \geq 1} E_k \in
-          \cM$.
-          Mengin $F_1 := E_1$, $F_2 := E_1 \setminus E_1$,
-          $F_k := E_k \setminus \underbrace{\bigcup_{j=1}^{k-1}
-            E_j}_{E_k \cap (\bigcup_{j=1}^{k-1} E_j)^C}, \dotsc$
-          eru í $\cM$.  og auðséð er að
-          $\bigcup_{k \geq 1} F_k = \bigcup_{k \geq 1} E_k$. Þar
-          með er $\bigcup_{k \geq 1} E_k \in \cM$ vegna þess að
-          $F_k$-in eru innbyrðis sundurlæg.
-        \end{proof}
+    \begin{setn*}
+    Látum \ $A\in\M$ \ og \ $B\subseteq \R$ \ fullnægja skilyrðinu \ $m(A\Delta B) = 0$, þá er \ $B$ \ í \ $\M$ \ og \ $m(A) = m(B)$.
+    \end{setn*}
+    \begin{proof}
+      $m^*(A \Delta B) = 0$ hefur í för með sér að
+      $B \setminus A$ og $B \setminus A$ eru bæði núllmengi og
+      þar með bæði í $\cM$. Af því leiðir að mengin
+      $ A \cap B = A \setminus (A \setminus B) $ og
+      $B = B \setminus (B \setminus A)$ eru í $\cM$.  Við fáum
+      því
+      \begin{gather*}
+        m(A) \underbrace{=}_{A = (A \cap B) \amalg (A
+          \setminus B)} m( A \cap
+        B) + \underbrace{m(A \setminus B)}_{= 0}\\
+        = m(A \cap B) + \overbrace{m(B \setminus A)}^{= 0}
+        \underbrace{=}_{B = (A \cap B) \amalg (B \setminus A)}
+        m(B)
+      \end{gather*}
+    \end{proof}
 
-        \section{Fyrri fyrirlestur}
-        \subsection{}
-        \begin{proof}
-          \begin{enumerate}[(i)]
-          \item \[ m(A) = m^*(A) \leq m^*(B) = m(B) \]
-          \item Vitum skv. síðustu sönnun að endanl. sammengi af
-            mengjum úr $\cM$ eru í $\cM$.  Nú: Ef $A \subseteq B$,
-            þá $B \setminus A = B \cap A^C \in \cM$ og
-            $B = A \cup (B \setminus A)$ með
-            $A \cap (B \setminus A) = \emptyset$.  Þar með er
-            $m(B) = m(A) + m(B \setminus A)$ og því
-            $m(B \setminus A) = m(B) - m(A)$.
+\begin{setn*}
+Látum \ $A$ \ vera hlutmengi í \ $\R$.
+\begin{enumerate}[(i)]
+\medskip
+\item
+Fyrir sérhvert \ $\varepsilon > 0$ \ er til opið mengi \ $O$ \ sem uppfyllir
+\[
+A\subseteq O\quad\text{og}\quad m(O)\leq m^*(A) + \varepsilon.
+\]
+\item
+Ef \ $A\in\M$ \ þá er, fyrir sérhvert \ $\varepsilon > 0$,  til opið mengi \ $O$ \ sem uppfyllir 
+\[
+A\subseteq O\quad\text{og}\quad m(O\setminus A) < \varepsilon.
+\]
+\item
+Til er runa \ $(O_n)_{n\geq 1}$ \ af opnum mengjum í \ $\R$ \ sem uppfyllir
+\[
+A\subseteq\bigcap_{n\geq 1}O_n\quad\text{og}\quad m\left(\bigcap_{n\geq 1}O_n\right) = m^*(A).
+\] 
+\end{enumerate}
+\end{setn*}
+    \begin{proof}
+      \begin{enumerate}[(i)]
+      \item Til er runa af \emph{opnum} bilum
+        $(I_n)_{n \geq 1}$ þ.a.
+        $A \subseteq \bigcup_{n \geq 1} I_n$ og
+        \[ \sum_{n \geq 1} \underbrace{m(I_n)}_{= \ell(I_n)}
+        \leq m^*(A) + \varepsilon \]
+        Setjum $O := \bigcup_{n \geq 1} I_n$ og fáum að O er
+        opið mengi og
+        $ m(O) \leq \sum_{n \geq 1} m(I_n) \leq m^*(A) +
+        \varepsilon$
+      \item Gerum fyrst ráð fyrir að $m(A) < \infty$ og veljum
+        O eins og í (i) með $\f{\varepsilon}{2}$ í stað
+        $\varepsilon$.  Þá fæst að
+        $m(O \setminus A) = m(O) - m(A) < \varepsilon$
 
-          \item Leiðir beint af því að $m^*$ er óháð hliðrun.
-          \end{enumerate}
-        \end{proof}
+        Í tilfellinu $m(A) = \infty$ setjum við, fyrir
+        sérhvert $n \geq 1$, $A_n := A \cap [-n,n]$.  Þar sem
+        $m(A_n) \leq 2 n \: \forall n$ þá er til opið $O_n$
+        þ.a. $A_n \subseteq O_n$ og
+        $m(O_n \setminus A_n) \leq \f{\varepsilon}{2^n}$.  Þá
+        er $O := \bigcup_{n \geq 1} O_n$ opið.
+        $A \subseteq O$ og
 
-        \subsection{}
-        \begin{proof}
-          $m^*(A \Delta B) = 0$ hefur í för með sér að
-          $B \setminus A$ og $B \setminus A$ eru bæði núllmengi og
-          þar með bæði í $\cM$. Af því leiðir að mengin
-          $ A \cap B = A \setminus (A \setminus B) $ og
-          $B = B \setminus (B \setminus A)$ eru í $\cM$.  Við fáum
-          því
-          \begin{gather*}
-            m(A) \underbrace{=}_{A = (A \cap B) \amalg (A
-              \setminus B)} m( A \cap
-            B) + \underbrace{m(A \setminus B)}_{= 0}\\
-            = m(A \cap B) + \overbrace{m(B \setminus A)}^{= 0}
-            \underbrace{=}_{B = (A \cap B) \amalg (B \setminus A)}
-            m(B)
-          \end{gather*}
-        \end{proof}
+        \[O \setminus A = \bigcup_{n \geq 1} O_n \setminus
+        \bigcup_{n \geq 1} A_n \subseteq_{n \geq 1} (O_n
+        \setminus A_n)\]
+        Þar með fæst
+        \[ m(O \setminus A) \leq \sumoinfty m(O_n \setminus
+        A_n) \leq \varepsilon \]
 
-        \subsection{}
+      \item Fyrir sérhvert $n \geq 1$ veljum við (skv. (i))
+        opið mengi $O_n$ sem uppfyllir $A \subseteq O_n$ og
+        $m(O_n) \leq m^*(A) + \1{n}$. Þá er
+        $\bigcap_{n\geq 1} O_n \in \cM$ og
+        $m(\bigcap_{n\geq 1} O_n) \leq m(O_n) \leq m^*(A) +
+        \1{n} $
+        fyrir öll $n$ svo að
+        $m(\bigcap_{n \geq 1} O_n) = m^*(A)$.
 
-        \begin{proof}
-          \begin{enumerate}[(i)]
-          \item Til er runa af \emph{opnum} bilum
-            $(I_n)_{n \geq 1}$ þ.a.
-            $A \subseteq \bigcup_{n \geq 1} I_n$ og
-            \[ \sum_{n \geq 1} \underbrace{m(I_n)}_{= \ell(I_n)}
-            \leq m^*(A) + \varepsilon \]
-            Setjum $O := \bigcup_{n \geq 1} I_n$ og fáum að O er
-            opið mengi og
-            $ m(O) \leq \sum_{n \geq 1} m(I_n) \leq m^*(A) +
-            \varepsilon$
-          \item Gerum fyrst ráð fyrir að $m(A) < \infty$ og veljum
-            O eins og í (i) með $\f{\varepsilon}{2}$ í stað
-            $\varepsilon$.  Þá fæst að
-            $m(O \setminus A) = m(O) - m(A) < \varepsilon$
+      \end{enumerate}
+    \end{proof}
 
-            Í tilfellinu $m(A) = \infty$ setjum við, fyrir
-            sérhvert $n \geq 1$, $A_n := A \cap [-n,n]$.  Þar sem
-            $m(A_n) \leq 2 n \: \forall n$ þá er til opið $O_n$
-            þ.a. $A_n \subseteq O_n$ og
-            $m(O_n \setminus A_n) \leq \f{\varepsilon}{2^n}$.  Þá
-            er $O := \bigcup_{n \geq 1} O_n$ opið.
-            $A \subseteq O$ og
+    \begin{setn*}
+    
+Látum  \ $(A_n)_{n\geq 1}$ \ vera runu í \ $\M$. 
+\begin{enumerate}[(i)]
+\medskip
+\item
+Ef runan er vaxandi, þ.e.a.s. \ $A_n\subseteq A_{n+1}$ \ fyrir öll \ $n$, þá gildir
+\[
+m\left(\bigcup_{n\geq 1}A_n\right) = \lim_{n\to\infty}m(A_n)
+\]
+\item
+Ef runan er minnkandi, þ.e.a.s. \ $A_{n+1}\subseteq A_n$ \ fyrir öll \ $n$, og \ $m(A_1) < \infty$ \ þá gildir
+\[
+m\left(\bigcap_{n\geq 1}A_n\right) = \lim_{n\to\infty}m(A_n)
+\]
+\end{enumerate}
+    \end{setn*}
+    \begin{proof}
+      \begin{enumerate}[(i)]
+      \item Fyrst runan er vaxandi, þá er
+        $A_n = \bigcup_{i=1}^{n} A_i$ fyrir öll $n$. setjum
+        $B_1 = A_1, B_i = A_i \setminus A_{i-1}$ fyrir
+        $i \geq 2$.  Þá er $\bigcup_{i=1}^n B_i = A_n$ fyrir
+        öll $n$ og $B_i \cap B_j = \emptyset$ ef $i \neq
+        j$. Við fáum því
+        \[ m(\bigcup_{i=1}^{\infty} A_i) =
+        m(\bigcup_{i=1}^{\infty} B_i) = \sum_{i=1}^{\infty}
+        B_i = \lim_{n \to \infty} \sum_{i =1}^n m(B_i) =
+        \lim_{n \to \infty} \bigcup_{i=1}^n B_i = \lim_{n \to
+          \infty} m(A_n)\]
 
-            \[O \setminus A = \bigcup_{n \geq 1} O_n \setminus
-            \bigcup_{n \geq 1} A_n \subseteq_{n \geq 1} (O_n
-            \setminus A_n)\]
-            Þar með fæst
-            \[ m(O \setminus A) \leq \sumoinfty m(O_n \setminus
-            A_n) \leq \varepsilon \]
-
-          \item Fyrir sérhvert $n \geq 1$ veljum við (skv. (i))
-            opið mengi $O_n$ sem uppfyllir $A \subseteq O_n$ og
-            $m(O_n) \leq m^*(A) + \1{n}$. Þá er
-            $\bigcap_{n\geq 1} O_n \in \cM$ og
-            $m(\bigcap_{n\geq 1} O_n) \leq m(O_n) \leq m^*(A) +
-            \1{n} $
-            fyrir öll $n$ svo að
-            $m(\bigcap_{n \geq 1} O_n) = m^*(A)$.
-
-          \end{enumerate}
-        \end{proof}
-
-        \subsection{}
-
-        \begin{proof}
-          \begin{enumerate}[(i)]
-          \item Fyrst runan er vaxandi, þá er
-            $A_n = \bigcup_{i=1}^{n} A_i$ fyrir öll $n$. setjum
-            $B_1 = A_1, B_i = A_i \setminus A_{i-1}$ fyrir
-            $i \geq 2$.  Þá er $\bigcup_{i=1}^n B_i = A_n$ fyrir
-            öll $n$ og $B_i \cap B_j = \emptyset$ ef $i \neq
-            j$. Við fáum því
-            \[ m(\bigcup_{i=1}^{\infty} A_i) =
-            m(\bigcup_{i=1}^{\infty} B_i) = \sum_{i=1}^{\infty}
-            B_i = \lim_{n \to \infty} \sum_{i =1}^n m(B_i) =
-            \lim_{n \to \infty} \bigcup_{i=1}^n B_i = \lim_{n \to
-              \infty} m(A_n)\]
-
-          \item Fyrst runan er minnkandi, þá er runan
-            $(A_1 \setminus A_n)_{n \geq 1}$ vaxandi svo skv. (i)
-            fæst:
-            \[m(\bigcup_{n\geq 1} (A_1 \setminus A_n)) = \lim_{n
-              \to \infty} m(A_1 \setminus A_n)\] Við höfum einnig:
-            \begin{itemize}
-            \item $m(A_1 \setminus A_n) = m(A_1) - m(A_n)$
-            \item
-              $\bigcup_{n \geq 1} (A_1 \setminus A_n) = A_1
-              \setminus \bigcap_{n \geq 1} A_n$ (de Morgan)
-            \end{itemize}
-            Fáum því
-            \begin{gather*}
-              m(\bigcup_{n \geq 1} (A_1 \setminus A_n))
-              = m(A_1) - m(\bigcap_{n \geq 1} A_n)\\
-              = \lim_{n \to \infty} [m(A_1) - m(A_n)]\\
-              = m(A_1) - \lim_{n \to \infty} m(A_n)
-            \end{gather*}
-            og þar með
-            $m(\bigcap_{n \geq 1} A_n) = \lim_{n \to \infty}
-            m(A_n)$.
-          \end{enumerate}
-        \end{proof}
+      \item Fyrst runan er minnkandi, þá er runan
+        $(A_1 \setminus A_n)_{n \geq 1}$ vaxandi svo skv. (i)
+        fæst:
+        \[m(\bigcup_{n\geq 1} (A_1 \setminus A_n)) = \lim_{n
+          \to \infty} m(A_1 \setminus A_n)\] Við höfum einnig:
+        \begin{itemize}
+        \item $m(A_1 \setminus A_n) = m(A_1) - m(A_n)$
+        \item
+          $\bigcup_{n \geq 1} (A_1 \setminus A_n) = A_1
+          \setminus \bigcap_{n \geq 1} A_n$ (de Morgan)
+        \end{itemize}
+        Fáum því
+        \begin{gather*}
+          m(\bigcup_{n \geq 1} (A_1 \setminus A_n))
+          = m(A_1) - m(\bigcap_{n \geq 1} A_n)\\
+          = \lim_{n \to \infty} [m(A_1) - m(A_n)]\\
+          = m(A_1) - \lim_{n \to \infty} m(A_n)
+        \end{gather*}
+        og þar með
+        $m(\bigcap_{n \geq 1} A_n) = \lim_{n \to \infty}
+        m(A_n)$.
+      \end{enumerate}
+    \end{proof}
 
 \begin{proof}[Æfing]
   Er niðurstaðan í (ii) rétt ef $m(A_1) < \infty$ er sleppt?
@@ -799,7 +1094,20 @@ $\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) <
   Sönnunin notar enga sérstaka eiginleika Lebesgue málsins.
 \end{ath}
 
-\subsection{}
+\begin{setn*}
+\begin{enumerate}[(i)]
+\item
+Látum \ $A_1,\ldots,A_n$ \ vera innbyrðis sundurlæg mengi úr \ $\M$. Þá gildir
+\[
+m\left(\bigcup_{j=1}^nA_j\right) \ = \ \sum_{j=1}^nm(A_j).
+\]
+\item
+Látum \ $(B_n)_{n\geq 1}$ \ vera minnkandi runu í \ $\M$, sem hefur tómt sniðmengi, og \ $m(B_n)<\infty$ \ fyrir öll nógu stór \ $n$. Þá gildir
+\[
+\lim_{n\to\infty}m(B_n) = 0.
+\]
+\end{enumerate}
+\end{setn*}
 
 \begin{proof}
   \begin{enumerate}[(i)]
@@ -810,6 +1118,59 @@ $\sumninfty{j} \ell(J_j) = \sumoinfty ( \sumninfty{k} \ell(I_k^n)) <
       \infty} m(B_n) \]
   \end{enumerate}
 \end{proof}
+
+\section{Borel-mengi}
+
+\begin{ath}{Upprifjun}
+Látum \ $\Om$ \ vera firðrúm (eða grannrúm), þá kallast  \ $\sigma$-algebran á \ $\Om$,  sem opnu mengin
+framleiða, {\bf Borel algebra} rúmsins \ $\Om$.
+\end{ath}
+
+Látum \ $\B$ \ tákna Borel-algebruna á \ $\R$ \ og setjum 
+
+\medskip
+$\I_1 := \{(a,\infty)\ /\ a\in\R\}$
+
+\medskip
+$\I_2 := \{[a,\infty)\ /\ a\in\R\}$
+
+\medskip
+$\I_3 := \{(-\infty,a)\ /\ a\in\R\}$
+
+\medskip
+$\I_4 := \{(-\infty,a]\ /\ a\in\R\}$
+
+\medskip
+\begin{setn*}
+Söfnin \ $\I_1,\I_2,\I_3,\I_4$ \ framleiða hvert um sig Borel-algebruna á \ $\R$.
+\end{setn*}
+
+
+\begin{setn*}
+Málrúm \ $(\Om,\F,\mu)$ \ er sagt {\bf fullkomið} ef það fullnægir eftirfarandi skilyrði:
+\begin{itemize}
+\item
+Fyrir sérhvert \ $A\in\F$ \ þannig að \ $\mu(A) = 0$ \ gildir að öll hlutmengi \ $B$ \ í \ $A$ \ tilheyra \ $\F$ \ (og þar með \ $\mu(B) = 0$).
+\end{itemize} 
+\end{setn*}
+
+
+
+\begin{setn*}
+Látum \ $(\Om,\F,\mu)$ \ vera málrúm og látum \ $\G$ \ vera safn allra hlutmengja \ $E$ \ í \ $\Om$ \ sem hafa þann eiginleika að til eru \ $A$ \ og \ $B$ \ úr \ $\F$ \ sem uppfylla
+\[
+A\subseteq E\subseteq B\quad\text{og}\quad \mu(B\setminus A) = 0
+\]
+og í því tilfelli setjum við \ $\mu(E) = \mu(A)$. Þá er \ $\G$ \ $\sigma$-algebra og \ $\mu$ \ (framlengt með þessum) er mál á \ $\G$. 
+\end{setn*}
+
+Við segjum að \ $\G$ \ sé \ {\bf $\mu$-fullkomnun} \ $\sigma$-algebrunnar \ $\F$.
+
+
+\begin{setn*}
+$\M$ \ er \ $m$-fullkomnun \ $\B$.
+\end{setn*}
+
 
 
 \end{document}

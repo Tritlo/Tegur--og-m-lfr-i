@@ -7,14 +7,16 @@
 %\setdefaultlanguage{icelandic}
 
 
-\usepackage{graphics,amsmath,amsfonts,amsbsy,amssymb,amsthm}
+\usepackage{graphics,amsmath,amsfonts}
+\usepackage{amsbsy,amssymb}
+\usepackage{amsthm}
 \usepackage{fancyvrb}
 \usepackage[a4paper]{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{datatool}
 \usepackage{float}
-\usepackage{mdframed}
+\usepackage[framemethod=tikz]{mdframed}
 \usepackage{listingsutf8}
 \usepackage{enumerate}
 \usepackage{comment}
@@ -102,9 +104,6 @@
 \DeclarePairedDelimiter{\set}{\{}{\}}
 \DeclarePairedDelimiter{\braket}{\langle}{\rangle}
 
-
-\newenvironment{lausn}{\begin{proof}[Lausn]}{\end{proof}}
-
 \newcommand{\sep}{\;|\;}
 
 \newcommand{\fig}[2]{
@@ -117,8 +116,44 @@
 }
 
 
+
+\renewcommand{\qedsymbol}{\textbf{Q.E.D}}
+
+\mdfdefinestyle{theoremstyle}{%
+roundcorner=5pt, %
+%leftmargin=1pt, rightmargin=1pt, %
+hidealllines=true, %
+align = center, % align theenvironment itself (left, center, rigth)
+nobreak=true,
+}
+
+\numberwithin{equation}{section}
+\theoremstyle{plain}
 \newtheorem*{setn}{Setning}
+\newtheorem{setn*}[equation]{Setning}
 \newtheorem*{hsetn}{Hjálparsetning}
+
+\theoremstyle{definition}
+\newtheorem*{skgr}{Skilgreining}
+\newtheorem{skgr*}[equation]{Skilgreining}
+\newtheorem*{daemi}{Dæmi}
+\newtheorem*{frumsenda}{Frumsenda}
+\newtheorem*{lausn}{Lausn}
+
+
+\theoremstyle{remark}
+\newtheorem*{ath}{Athugasemd}
+\newtheorem*{innsk}{Innskot}
+
+\surroundwithmdframed[style=theoremstyle,backgroundcolor = green!20]{skgr}
+\surroundwithmdframed[style=theoremstyle,backgroundcolor=blue!10]{setn}
+\surroundwithmdframed[style=theoremstyle,backgroundcolor = green!20]{skgr*}
+\surroundwithmdframed[style=theoremstyle,backgroundcolor=blue!10]{setn*}
+\surroundwithmdframed[style=theoremstyle,backgroundcolor = orange!20]{daemi}
+\surroundwithmdframed[style=theoremstyle,backgroundcolor = red!20]{ath}
+
+
+
 \lstset{  literate={á}{{\'a}}1
                   {ó}{{\'o}}1
                   {ú}{{\'u}}1
@@ -139,13 +174,3 @@
                   {Þ}{{\TH}}1
                   {Æ}{{\AE}}1
                   {Ý}{{\'Y}}1}
-
-
-\theoremstyle{definition}
-\newtheorem*{skgr}{Skilgreining}
-\newtheorem*{daemi}{Dæmi}
-\newtheorem*{frumsenda}{Frumsenda}
-
-\theoremstyle{remark}
-\newtheorem*{ath}{Athugasemd}
-\newtheorem*{innsk}{Innskot}
